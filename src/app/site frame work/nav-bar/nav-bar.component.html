@@ -1,0 +1,24 @@
+<div class="navbar">
+
+    <!-- main heading -->
+    <h2 class="logo">Food App</h2>
+
+    <!-- nav bar li items -->
+    <ul class="navbar-menu">
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="home">Home</a></li>
+        <li>Menu</li>
+        <li>About us</li>
+        <li>Contact us</li>
+    </ul>
+
+    <!-- nav bar right side icons -->
+    <div class="navbar-right">
+        <img src="../../../assets/images/search_icon.png" alt="">
+        <div class="navbar-serach-icon">
+            <img src="../../../assets/images/basket_icon.png" alt="">
+            <div class="dot"></div>
+        </div>
+        <button>sign in</button>
+    </div>
+
+</div>
