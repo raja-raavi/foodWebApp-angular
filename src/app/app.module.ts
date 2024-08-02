@@ -11,6 +11,7 @@ import { FoodListService } from './services/food-list.service';
 import { ExploreMenuComponent } from './site frame work/explore-menu/explore-menu.component';
 import { menuStyleDirective } from './Directives/menuStyle.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavBarComponent,
     FooterComponent,
-    ExploreMenuComponent
+    ExploreMenuComponent,
+    TopDishesComponent
   ],
   imports: [
     BrowserModule,

@@ -330,5 +330,63 @@
             "food_category": "Noodles",
             "food_quantity": 0
         }
+    ],
+    "top_dishes": [
+        {
+            "food_id": 1,
+            "food_name": "Greek salad",
+            "food_image": "assets/images/food_1.png",
+            "food_price": 12,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 2,
+            "food_name": "Butterscotch Cake",
+            "food_image": "assets/images/food_19.png",
+            "food_price": 20,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 3,
+            "food_name": "Bread Sandwich",
+            "food_image": "assets/images/food_16.png",
+            "food_price": 24,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 4,
+            "food_name": "Chicken Rolls",
+            "food_image": "assets/images/food_7.png",
+            "food_price": 20,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 5,
+            "food_name": "Chicken Salad",
+            "food_image": "assets/images/food_4.png",
+            "food_price": 24,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 6,
+            "food_name": "Cheese Pasta",
+            "food_image": "assets/images/food_25.png",
+            "food_price": 12,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 7,
+            "food_name": "Sliced Cake",
+            "food_image": "assets/images/food_20.png",
+            "food_price": 15,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        },
+        {
+            "food_id": 8,
+            "food_name": "Somen Noodles",
+            "food_image": "assets/images/food_31.png",
+            "food_price": 20,
+            "food_description": "Food provides essential nutrients for overall health and well-being"
+        }
     ]
 }
