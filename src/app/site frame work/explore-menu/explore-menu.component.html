@@ -1,0 +1,23 @@
+<div class="explore-menu">
+
+    <h1>Explore our menu</h1>
+
+    <p class="explore-menu-text">Choose from a diverse menu featuring a delectable array of dishes with the finest
+        ingridents and culinary
+        expertise. Our mission is to satisfy your cravings and elevaate your dining experience, one delicious meal
+        at a
+        time.
+    </p>
+
+    <div class="explore-menu-list">
+
+        <div *ngFor="let ele of menuListResult" class="explore-menu-list-item">
+            <img [src]="ele.menu_image" (click)=" setCategory(ele.menu_name)" menuStyle>
+            <p>{{ele.menu_name}}</p>
+        </div>
+
+    </div>
+
+    <hr />
+
+</div>

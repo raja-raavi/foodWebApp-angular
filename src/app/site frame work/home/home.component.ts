@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { menuList } from '../../models/menu-list';
+import { MenuListService } from '../../services/menu-list.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  
+   
 }
