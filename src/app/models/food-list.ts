@@ -1,5 +1,5 @@
 export interface foodList{
-    "food_id": number,
+    "id": number,
     "food_name": string,
     "food_image": string,
     "food_price": number,

@@ -13,6 +13,7 @@ import { menuStyleDirective } from './Directives/menuStyle.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +21,13 @@ import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.comp
     NavBarComponent,
     FooterComponent,
     ExploreMenuComponent,
-    TopDishesComponent
+    TopDishesComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [MenuListService, FoodListService, menuStyleDirective],
   bootstrap: [AppComponent]

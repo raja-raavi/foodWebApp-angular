@@ -1,31 +1,23 @@
-<div class="explore-menu">
-
-    <h1>Explore our menu</h1>
-
+<div class="food-display" #itemInfo>
+    <h2>Explore Our Menu</h2>
     <p class="explore-menu-text">Choose from a diverse menu featuring a delectable array of dishes with the finest
         ingridents and culinary
         expertise. Our mission is to satisfy your cravings and elevaate your dining experience, one delicious meal
         at a
         time.
     </p>
-
-    <div class="explore-menu-list">
-        <div *ngFor="let ele of menuListResult; let i = index" class="explore-menu-list-item">
-            <img [src]="ele.menu_image" [ngClass]="{'customClass': selectedIndex === i}"
-                (click)="setCategory(ele.menu_name); selectedIndex = i">
-            <p>{{ele.menu_name}}</p>
-        </div>
-    </div>
-    <hr />
-</div>
-
-<!-- filtered products -->
-<div class="food-display" *ngIf="filteredItems">
-    <h3>Hmmm....You have good choice </h3>
     <div class="food-display-list">
-        <div class="food-item" *ngFor="let ele of filteredItems">
+        <div class="food-item" *ngFor="let ele of foodListResult,; let i = index">
             <div class="food-item-image-container">
                 <img [src]="ele.food_image" alt="image" class="food-item-image">
+                <img src="../../../assets/images/add_icon_white.png" alt="count button" class="addButton"
+                    (click)="addButtonClicked(i)" [routerLink]="['/foodItems/foodMenu', ele.id]"
+                    *ngIf="!showCounter[i] && ele.food_quantity === 0">
+                <div class="food-item-counter" *ngIf="showCounter[i] && ele.food_quantity > 0">
+                    <img src="../../../assets/images/remove_icon_red.png" (click)="decreaseItemCount(i)">
+                    <p>{{ele.food_quantity}}</p>
+                    <img src="../../../assets/images/add_icon_green.png" (click)="increaseItemCount(i)">
+                </div>
             </div>
             <div class="food-item-info">
                 <div class="food-item-name-rating">
@@ -37,5 +29,4 @@
             </div>
         </div>
     </div>
-    <hr />
 </div>

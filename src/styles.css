@@ -24,7 +24,8 @@ body {
 
 .active {
   padding-bottom: 2px;
-  border-bottom: 2px solid tomato;
+  color: tomato;
+  border-bottom: 3px solid tomato;
 }
 
 @keyframes fadeIn {
@@ -35,3 +36,4 @@ body {
     opacity: 1;
   }
 }
+

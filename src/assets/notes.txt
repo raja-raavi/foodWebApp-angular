@@ -1,0 +1,8 @@
+to align items like column
+
+.footer-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px
+}

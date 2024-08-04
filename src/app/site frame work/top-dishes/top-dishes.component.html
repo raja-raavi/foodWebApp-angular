@@ -1,5 +1,5 @@
 <div class="food-display">
-    <h2>Top Dishes Near You</h2>
+    <h2>Top Sellers Near You</h2>
     <div class="food-display-list">
         <div class="food-item" *ngFor="let ele of topDishesResult">
             <div class="food-item-image-container">
@@ -8,7 +8,7 @@
             <div class="food-item-info">
                 <div class="food-item-name-rating">
                     <p>{{ele.food_name}}</p>
-                    <img src="../../../assets/rating_starts.png" alt="">
+                    <img src="../../../assets/images/rating_starts.png" alt="">
                 </div>
                 <p class="food-item-description">{{ele.food_description}}</p>
                 <p class="food-item-price">${{ele.food_price}}</p>

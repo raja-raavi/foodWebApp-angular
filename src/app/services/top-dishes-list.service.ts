@@ -15,7 +15,7 @@ export class TopDishesListService {
   private topDishesSubject = new Subject<topDishes[]>();
 
   getTopDishesData(): Observable<topDishes[]> {
-    this.http.get('http://localhost:3000/top_dishes').subscribe((data: any) => {
+    this.http.get('http://localhost:3000/topDishes').subscribe((data: any) => {
       this.topDishesSubject.next(data);
     });
     return this.topDishesSubject.asObservable();

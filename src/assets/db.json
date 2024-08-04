@@ -1,5 +1,5 @@
 {
-    "menu_list": [
+    "menuList": [
         {
             "menu_id": 1,
             "menu_name": "Salad",
@@ -41,9 +41,9 @@
             "menu_image": "assets/images/menu_8.png"
         }
     ],
-    "food_list": [
+    "foodList": [
         {
-            "food_id": 1,
+            "id": 1,
             "food_name": "Greek salad",
             "food_image": "assets/images/food_1.png",
             "food_price": 12,
@@ -52,7 +52,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 2,
+            "id": 2,
             "food_name": "Veg salad",
             "food_image": "assets/images/food_2.png",
             "food_price": 18,
@@ -61,7 +61,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 3,
+            "id": 3,
             "food_name": "Clover Salad",
             "food_image": "assets/images/food_3.png",
             "food_price": 16,
@@ -70,7 +70,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 4,
+            "id": 4,
             "food_name": "Chicken Salad",
             "food_image": "assets/images/food_4.png",
             "food_price": 24,
@@ -79,7 +79,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 5,
+            "id": 5,
             "food_name": "Lasagna Rolls",
             "food_image": "assets/images/food_5.png",
             "food_price": 14,
@@ -88,7 +88,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 6,
+            "id": 6,
             "food_name": "Peri Peri Rolls",
             "food_image": "assets/images/food_6.png",
             "food_price": 12,
@@ -97,7 +97,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 7,
+            "id": 7,
             "food_name": "Chicken Rolls",
             "food_image": "assets/images/food_7.png",
             "food_price": 20,
@@ -106,7 +106,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 8,
+            "id": 8,
             "food_name": "Veg Rolls",
             "food_image": "assets/images/food_8.png",
             "food_price": 15,
@@ -115,7 +115,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 9,
+            "id": 9,
             "food_name": "Ripple Ice Cream",
             "food_image": "assets/images/food_9.png",
             "food_price": 14,
@@ -124,7 +124,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 10,
+            "id": 10,
             "food_name": "Fruit Ice Cream",
             "food_image": "assets/images/food_10.png",
             "food_price": 22,
@@ -133,7 +133,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 11,
+            "id": 11,
             "food_name": "Jar Ice Cream",
             "food_image": "assets/images/food_11.png",
             "food_price": 10,
@@ -142,7 +142,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 12,
+            "id": 12,
             "food_name": "Vanilla Ice Cream",
             "food_image": "assets/images/food_12.png",
             "food_price": 12,
@@ -151,7 +151,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 13,
+            "id": 13,
             "food_name": "Chicken Sandwich",
             "food_image": "assets/images/food_13.png",
             "food_price": 12,
@@ -160,7 +160,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 14,
+            "id": 14,
             "food_name": "Vegan Sandwich",
             "food_image": "assets/images/food_14.png",
             "food_price": 18,
@@ -169,7 +169,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 15,
+            "id": 15,
             "food_name": "Grilled Sandwich",
             "food_image": "assets/images/food_15.png",
             "food_price": 16,
@@ -178,7 +178,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 16,
+            "id": 16,
             "food_name": "Bread Sandwich",
             "food_image": "assets/images/food_16.png",
             "food_price": 24,
@@ -187,7 +187,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 17,
+            "id": 17,
             "food_name": "Cup Cake",
             "food_image": "assets/images/food_17.png",
             "food_price": 14,
@@ -196,7 +196,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 18,
+            "id": 18,
             "food_name": "Vegan Cake",
             "food_image": "assets/images/food_18.png",
             "food_price": 12,
@@ -205,7 +205,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 19,
+            "id": 19,
             "food_name": "Butterscotch Cake",
             "food_image": "assets/images/food_19.png",
             "food_price": 20,
@@ -214,7 +214,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 20,
+            "id": 20,
             "food_name": "Sliced Cake",
             "food_image": "assets/images/food_20.png",
             "food_price": 15,
@@ -223,7 +223,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 21,
+            "id": 21,
             "food_name": "Garlic Mushroom",
             "food_image": "assets/images/food_21.png",
             "food_price": 14,
@@ -232,7 +232,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 22,
+            "id": 22,
             "food_name": "Fried Cauliflower",
             "food_image": "assets/images/food_22.png",
             "food_price": 22,
@@ -241,7 +241,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 23,
+            "id": 23,
             "food_name": "Mix Veg Pulao",
             "food_image": "assets/images/food_23.png",
             "food_price": 10,
@@ -250,7 +250,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 24,
+            "id": 24,
             "food_name": "Rice Zucchini",
             "food_image": "assets/images/food_24.png",
             "food_price": 12,
@@ -259,7 +259,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 25,
+            "id": 25,
             "food_name": "Cheese Pasta",
             "food_image": "assets/images/food_25.png",
             "food_price": 12,
@@ -268,7 +268,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 26,
+            "id": 26,
             "food_name": "Tomato Pasta",
             "food_image": "assets/images/food_26.png",
             "food_price": 18,
@@ -277,7 +277,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 27,
+            "id": 27,
             "food_name": "Creamy Pasta",
             "food_image": "assets/images/food_27.png",
             "food_price": 16,
@@ -286,7 +286,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 28,
+            "id": 28,
             "food_name": "Chicken Pasta",
             "food_image": "assets/images/food_28.png",
             "food_price": 24,
@@ -295,7 +295,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 29,
+            "id": 29,
             "food_name": "Buttter Noodles",
             "food_image": "assets/images/food_29.png",
             "food_price": 14,
@@ -304,7 +304,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 30,
+            "id": 30,
             "food_name": "Veg Noodles",
             "food_image": "assets/images/food_30.png",
             "food_price": 12,
@@ -313,7 +313,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 31,
+            "id": 31,
             "food_name": "Somen Noodles",
             "food_image": "assets/images/food_31.png",
             "food_price": 20,
@@ -322,7 +322,7 @@
             "food_quantity": 0
         },
         {
-            "food_id": 32,
+            "id": 32,
             "food_name": "Cooked Noodles",
             "food_image": "assets/images/food_32.png",
             "food_price": 15,
@@ -331,7 +331,7 @@
             "food_quantity": 0
         }
     ],
-    "top_dishes": [
+    "topDishes": [
         {
             "food_id": 1,
             "food_name": "Greek salad",

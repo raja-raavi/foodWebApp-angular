@@ -1,11 +1,16 @@
+
 .food-display{
     margin-top: 30px;
 }
 
 .food-display h2{
     /* color: #262626; */
-    color:  tomato;
+    color: tomato;
     font-weight: 700;
+}
+
+.explore-menu-text{
+    margin-top: 15px;
 }
 
 .food-display-list{
@@ -60,4 +65,33 @@
     font-size: 19px;
     font-weight: 500;
     color: tomato;
+}
+
+.food-item-image-container {
+    position: relative;
+}
+
+.food-item-image-container .addButton{
+    width: 35px;
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.food-item-image-container .food-item-counter{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.food-item-image-container .food-item-counter img{
+    width: 25px;
 }

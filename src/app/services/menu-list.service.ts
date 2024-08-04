@@ -13,7 +13,7 @@ export class MenuListService {
   private menuListSubject = new Subject<menuList[]>();
 
   getMenuData(): Observable<menuList[]> {
-    this.http.get('http://localhost:3000/menu_list').subscribe((data: any) => {
+    this.http.get('http://localhost:3000/menuList').subscribe((data: any) => {
       this.menuListSubject.next(data);
     });
     return this.menuListSubject.asObservable();

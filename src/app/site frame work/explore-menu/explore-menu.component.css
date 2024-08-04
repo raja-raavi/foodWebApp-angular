@@ -7,7 +7,8 @@
   }
   
   .explore-menu h1 {
-    color: #262626;
+    /* color: #262626; */
+    color: tomato;
     font-weight: 500;
   }
   
@@ -51,7 +52,89 @@
     border: none;
   }
   
-  .custom-class{
-    border: 5px solid red;
+  .customClass{
+    border: 4px solid red;
     padding: 2px;
   }
+
+
+  /**********filtered products***********/
+
+  .food-display{
+    margin-top: 30px;
+}
+
+.food-display h3{
+    color: tomato;
+    font-weight: 700;
+}
+
+.food-display-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;  
+}
+
+.food-item{
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    transition: 0.3s;
+    animation: fadeIn 2s;
+}
+
+.food-item-image {
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+}
+
+.food-item-info{
+    padding: 20px;
+}
+
+.food-item-name-rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.food-item-name-rating p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.food-item-name-rating img{
+    width: 70px;
+}
+
+.food-item-description{
+    color: #676767;
+    font-size: 15px;
+}
+
+.food-item-price {
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: 500;
+    color: tomato;
+}
+
+hr {
+  margin: 40px 0px;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+}
+
+/**********RESPONSIVE************/
+
+@media (max-width:1050px){
+  .explore-men-text{
+    max-width: 100%;
+    font-size: 14px;
+  }
+}
