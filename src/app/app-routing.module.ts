@@ -5,7 +5,7 @@ import { ErrorComponent } from './site frame work/error/error.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  { path: 'foodItems', loadChildren: () => import('./components/food-items.module').then(m => m.FoodItemsModule) },
+  { path: 'food-items', loadChildren: () => import('./components/food-items.module').then(m => m.FoodItemsModule) },
   { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
   {path: '**', component: ErrorComponent}
 ];

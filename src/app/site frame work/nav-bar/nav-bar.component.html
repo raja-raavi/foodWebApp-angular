@@ -6,9 +6,9 @@
     <!-- nav bar li items -->
     <ul class="navbar-menu">
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="/foodItems/foodMenu">Menu</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="">Top sellers</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="">Contact us</a></li>
+        <li [routerLinkActive]="'active'"><a routerLink="/food-items/food-menu">Menu</a></li>
+        <li [routerLinkActive]="'active'"><a>Top sellers</a></li>
+        <li [routerLinkActive]="'active'"><a>Contact us</a></li>
     </ul>
 
     <!-- nav bar right side icons -->
@@ -18,6 +18,6 @@
             <img src="../../../assets/images/basket_icon.png" alt="">
             <div class="dot"></div>
         </div>
-        <button>sign in</button>
+        <button routerLink="/auth/signIn">sign in</button>
     </div>
 </div>

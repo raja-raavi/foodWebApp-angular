@@ -7,8 +7,8 @@ import { InvalidSearchComponent } from './invalid-search/invalid-search.componen
 
 const routes: Routes = [
   { path: '', component: FoodItemsComponent },
-  {path:'foodMenu/:id', component: FoodMenuComponent},
-  {path: 'foodMenu', component: FoodMenuComponent},
+  {path:'food-menu/:id', component: FoodMenuComponent},
+  {path: 'food-menu', component: FoodMenuComponent},
   {path: '**', component: InvalidSearchComponent},
 ];
 

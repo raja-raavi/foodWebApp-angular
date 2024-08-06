@@ -95,3 +95,7 @@
 .food-item-image-container .food-item-counter img{
     width: 25px;
 }
+
+.food-item-counter :hover{
+    cursor: pointer;
+}

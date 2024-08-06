@@ -55,12 +55,12 @@ export class FoodMenuComponent {
     this.updateSelectedItems(index);
   }
 
-  updateSelectedItems(index: number) {
-    this.selectedItems[this.foodListResult[index].id] = {
-      ...this.foodListResult[index],
-      quantity: this.foodListResult[index].food_quantity
+  updateSelectedItems(index: number) {    
+    this.selectedItems[this.foodListResult[index].id] = {  // returning an Id which is selected
+      ...this.foodListResult[index],  // returning the foodList result which is selected
+      quantity: this.foodListResult[index].food_quantity // returning the quantity of the Item which is selecting
     };
-    console.log('Selected Items:', this.selectedItems);
+    console.log('Selected Items:', this.selectedItems); 
   }
 
   getSelectedItems() {

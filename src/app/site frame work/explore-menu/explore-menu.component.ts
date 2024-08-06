@@ -19,7 +19,7 @@ export class ExploreMenuComponent {
   selectedIndex: number = -1;
   
    constructor(private menuService: MenuListService, private foodListService: FoodListService, 
-              private actiatedRoute: ActivatedRoute, private router: Router) {
+    private actiatedRoute: ActivatedRoute, private router: Router) {
     }
 
   ngOnInit() {
@@ -35,7 +35,7 @@ export class ExploreMenuComponent {
 
     // Get the query parameter
     this.actiatedRoute.queryParams.subscribe(params => {
-      this.userCategory = params['category'];
+      this.userCategory = params['selectedCategory'];
       console.log('Query Parameter:', this.userCategory);
       this.filterFoodList();
     });
@@ -45,7 +45,7 @@ export class ExploreMenuComponent {
     // Update the query parameter
     this.router.navigate([], {
       relativeTo: this.actiatedRoute,
-      queryParams: { category: value },
+      queryParams: { selectedCategory: value },
       queryParamsHandling: 'merge'
     });
   }

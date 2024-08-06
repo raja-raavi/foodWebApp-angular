@@ -7,11 +7,11 @@
         time.
     </p>
     <div class="food-display-list">
-        <div class="food-item" *ngFor="let ele of foodListResult,; let i = index">
+        <div class="food-item" *ngFor="let ele of foodListResult; let i = index">
             <div class="food-item-image-container">
                 <img [src]="ele.food_image" alt="image" class="food-item-image">
                 <img src="../../../assets/images/add_icon_white.png" alt="count button" class="addButton"
-                    (click)="addButtonClicked(i)" [routerLink]="['/foodItems/foodMenu', ele.id]"
+                    (click)="addButtonClicked(i)" [routerLink]="['/food-items/food-menu', ele.id]"
                     *ngIf="!showCounter[i] && ele.food_quantity === 0">
                 <div class="food-item-counter" *ngIf="showCounter[i] && ele.food_quantity > 0">
                     <img src="../../../assets/images/remove_icon_red.png" (click)="decreaseItemCount(i)">
