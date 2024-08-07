@@ -8,6 +8,8 @@ import { foodList } from '../models/food-list'
 })
 export class FoodListService {
 
+  selectedItems: any = {};
+
   constructor(private http: HttpClient) { }
 
   private foodListSubject = new Subject<foodList[]>();
@@ -22,4 +24,16 @@ export class FoodListService {
   getFoodItem(id: number) : Observable <any> {
    return this.http.get('http://localhost:3000/foodList/'+id);
   }
+
+  updateSelectedItems(index: number, foodItem: any) {
+    this.selectedItems[foodItem.id] = {
+      ...foodItem,
+      quantity: foodItem.food_quantity
+    };
+  }
+
+  getSelectedItems() {
+    return this.selectedItems;
+  }
+
 }

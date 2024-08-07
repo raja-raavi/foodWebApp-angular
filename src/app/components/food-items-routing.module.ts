@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { FoodItemsComponent } from './food-items.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { InvalidSearchComponent } from './invalid-search/invalid-search.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
   { path: '', component: FoodItemsComponent },
   {path:'food-menu/:id', component: FoodMenuComponent},
   {path: 'food-menu', component: FoodMenuComponent},
-  {path: '**', component: InvalidSearchComponent},
+  {path: 'cart', component: CartComponent},
+  {path: '**', component: InvalidSearchComponent}
 ];
 
 @NgModule({

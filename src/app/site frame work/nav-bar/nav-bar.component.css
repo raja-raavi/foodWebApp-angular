@@ -42,6 +42,7 @@
   
   .navbar-serach-icon {
     position: relative;
+    cursor: pointer;
   }
   
   .navbar-serach-icon .dot {
