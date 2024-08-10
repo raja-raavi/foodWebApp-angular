@@ -6,6 +6,8 @@ import { FoodItemsComponent } from './food-items.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { InvalidSearchComponent } from './invalid-search/invalid-search.component';
 import { CartComponent } from './cart/cart.component';
+import { PopupComponent } from './popup/popup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,10 +16,13 @@ import { CartComponent } from './cart/cart.component';
     FoodMenuComponent,
     InvalidSearchComponent,
     CartComponent,
+    PopupComponent,
   ],
   imports: [
     CommonModule,
-    FoodItemsRoutingModule
+    FoodItemsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class FoodItemsModule { }

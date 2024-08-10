@@ -25,14 +25,14 @@ export class FoodListService {
    return this.http.get('http://localhost:3000/foodList/'+id);
   }
 
-  updateSelectedItems(index: number, foodItem: any) {
-    this.selectedItems[foodItem.id] = {
-      ...foodItem,
-      quantity: foodItem.food_quantity
-    };
-  }
+  // updateSelectedItems(index: number, foodItem: any) {
+  //   this.selectedItems[foodItem.id] = {
+  //     ...foodItem,
+  //     quantity: foodItem.food_quantity
+  //   };
+  // }
 
-  getSelectedItems() {
+  getCartItems() {
     return this.selectedItems;
   }
 

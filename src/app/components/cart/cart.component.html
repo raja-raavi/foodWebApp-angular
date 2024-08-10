@@ -1,15 +1,69 @@
-<div class="cart">
-    <div class="cart-items">
-        <div class="cart-items-title">
-            <p>Items</p>
-            <p>Title</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Total</p>
-            <p>Remove</p>
-        </div>
-        <br>
-        <hr />
+<ng-content *ngIf="!cartItems; then loading; else data"></ng-content>
 
+<ng-template #loading>
+    <div class="empty-cart-message">
+        <h4>Cart is empty?....No problem...Our menu is full of delicious options!</h4>
+        <img src="../../../assets/images/cart_empty.png" alt="">
     </div>
-</div>
+    <button class="view-menu-button" routerLink="/food-items/food-menu">Go to Menu</button>
+</ng-template>
+
+<ng-template #data>
+    <div class="cart">
+        <div class="cart-items">
+            <div class="cart-items-title">
+                <p>Image</p>
+                <p>Title</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Total</p>
+                <p>Remove</p>
+            </div>
+            <br>
+            <hr />
+
+            <div class="cart-items-title cart-items-item" *ngFor="let ele of cartItems; let i = index">
+                <img [src]="ele.food_image" alt="cartItemImage">
+                <p>{{ele.food_name}}</p>
+                <p>${{ele.food_price}}</p>
+                <p>{{ele.food_quantity}}</p>
+                <p>${{ele.food_price*ele.food_quantity}}</p>
+                <p class="remove" (click)="removeItemFromCart(i)">❌</p>
+            </div>
+        </div>
+        <div class="cart-bottom">
+            <div class=" cart-total">
+                <p class="cart-total-heading">Cart Totals</p>
+                <div>
+                    <div class="cart-total-details">
+                        <p>Sub Total</p>
+                        <p>${{subTotal}}</p>
+                    </div>
+                    <hr />
+                    <div class="cart-total-details">
+                        <p>Delivey Fee : (Add more..less fees..)</p>
+                        <p>${{deliveryFee}}</p>
+                    </div>
+                    <hr />
+                    <div class="cart-total-details">
+                        <b>Total</b>
+                        <b>${{Total}}</b>
+                    </div>
+                    <button>PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+            <div class="cart-promocode">
+                <div>
+                    <p>If you have a promo code, Enter it here</p>
+                    <div class="cart-promocode-input">
+                        <form #promocode="ngForm">
+                            <input type="text" placeholder="Enter Promocode Here" name="promocode" #input required>
+                        </form>
+                        <button (click)="userInput(input)" (click)="popup()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-popup *ngIf="popupService.popup$ | async as popup"></app-popup>
+</ng-template>
