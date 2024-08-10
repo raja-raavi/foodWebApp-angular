@@ -12,7 +12,7 @@
     <div class="explore-menu-list">
         <div *ngFor="let ele of menuListResult; let i = index" class="explore-menu-list-item">
             <img [src]="ele.menu_image" [ngClass]="{'customClass': selectedIndex === i}"
-                (click)="setCategory(ele.menu_name); selectedIndex = i">
+                (click)="setCategory(ele.menu_name); selectedIndex = i; scrollToFilteredItems()">
             <p>{{ele.menu_name}}</p>
         </div>
     </div>

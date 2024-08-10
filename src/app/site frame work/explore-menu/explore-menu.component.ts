@@ -41,8 +41,8 @@ export class ExploreMenuComponent {
     });
    }
 
+   // Update the query parameter
    setCategory(value: string) {
-    // Update the query parameter
     this.router.navigate([], {
       relativeTo: this.actiatedRoute,
       queryParams: { selectedCategory: value },
@@ -50,12 +50,23 @@ export class ExploreMenuComponent {
     });
   }
 
+  // Filter the food list based on the query parameter
   filterFoodList() {
-    // Filter the food list based on the query parameter
     if (this.userCategory) {
       this.filteredItems = this.foodListResult.filter(item => item.food_category === this.userCategory);
       console.log('Filtered Food List:', this.filteredItems);
     }
+  }
+
+  // scrolling to filtered Items
+  scrollToFilteredItems() {
+    const filteredItemsSection = document.querySelector('.food-display') as HTMLElement;
+    const yOffset = window.innerHeight / 2 - filteredItemsSection.offsetHeight / 2;
+    filteredItemsSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center'
+    });
   }
    
 }
