@@ -8,6 +8,8 @@ import { InvalidSearchComponent } from './invalid-search/invalid-search.componen
 import { CartComponent } from './cart/cart.component';
 import { PopupComponent } from './popup/popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PlaceOrderComponent } from './place-order/place-order.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InvalidSearchComponent,
     CartComponent,
     PopupComponent,
+    PlaceOrderComponent,
+    PaymentPageComponent,
   ],
   imports: [
     CommonModule,

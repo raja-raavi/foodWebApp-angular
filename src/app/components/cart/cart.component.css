@@ -34,12 +34,12 @@
     align-items: center;
     color: tomato;
     font-size: max(1vw, 10px);
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .cart-items-item{
     margin: 10px 0px;
-    color: black;
+    color:  #555;
 }
 
 .cart-items-item img{

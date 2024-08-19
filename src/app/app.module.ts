@@ -12,6 +12,7 @@ import { ExploreMenuComponent } from './site frame work/explore-menu/explore-men
 import { menuStyleDirective } from './Directives/menuStyle.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,12 +24,13 @@ import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.comp
     FooterComponent,
     ExploreMenuComponent,
     TopDishesComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [MenuListService, FoodListService, menuStyleDirective],
   bootstrap: [AppComponent]

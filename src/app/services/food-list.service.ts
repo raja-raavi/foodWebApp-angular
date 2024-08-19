@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { foodList } from '../models/food-list'
+import { deliveryinformation } from '../models/deliveryInfo';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,11 @@ export class FoodListService {
 
   getCartItems() {
     return this.selectedItems;
+  }
+
+  //to store delivery Info
+  deliveryInformation(info:deliveryinformation) : Observable<deliveryinformation>{
+   return this.http.post<deliveryinformation>('http://localhost:3000/DeliveryInfo', info);
   }
 
 }

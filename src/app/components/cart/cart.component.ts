@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { foodList } from '../../models/food-list';
+import { Component, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { FoodListService } from '../../services/food-list.service';
 import { PopupService } from '../../services/popup.service';
 import { PopupComponent } from '../popup/popup.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cart',
@@ -16,16 +17,29 @@ export class CartComponent implements OnInit{
   deliveryFee: number = 0;  
   Total:number = 0;
   isCoupounApplied: boolean = false;
+  
+  @Output() cartData = new EventEmitter(); //emitting data
 
-  constructor(private foodListService: FoodListService, public popupService: PopupService){
+  constructor(private foodListService: FoodListService, public popupService: PopupService, private router: Router){
 
   }
+
   
+
   ngOnInit(){
     this.cartItems = this.foodListService.getCartItems().filter((item) => item.food_quantity > 0);
     this.calculateTotals();
+
+    //emitting the data to placeOrder compoenent
+    this.cartData.emit({
+      cartItems: this.cartItems,
+      subTotal: this.subTotal,
+      deliveryFee: this.deliveryFee,
+      Total: this.Total
+    });
   }
   
+  //removing Items from cart when cross button is clicked
   removeItemFromCart(index: number){
     if (this.cartItems[index].food_quantity > 1) {
       this.cartItems[index].food_quantity--;
@@ -36,15 +50,14 @@ export class CartComponent implements OnInit{
     this.calculateTotals();
   }
   
+  //calculating total 
   calculateTotals(){
     this.subTotal = 0;
     for(let ele of this.cartItems){
       this.subTotal += ele.food_quantity * ele.food_price;
     }
-    
     // Calculate delivery fee
     this.deliveryFee = this.getDeliveryFee(this.subTotal);
-    
     // Calculate total
     this.Total = this.subTotal + this.deliveryFee;
   }
@@ -64,6 +77,7 @@ export class CartComponent implements OnInit{
     return 0; // default delivery fee
   }
 
+  //for Coupoun code
   calculatePercentage(number, percent) {
     return (number / 100) * percent;
   }
@@ -88,8 +102,17 @@ export class CartComponent implements OnInit{
     }
   }
 
+  proceedToCheckout(){
+    if(this.Total>0){
+      this.router.navigate(['/food-items/place-order']);
+    }else{
+      this.popupService.popupMessage = "Opps...your cart is zero now..Grab few items"
+    }
+  }
+
   popup() {
     this.popupService.openPopup(PopupComponent, this.popupService.popupMessage);
   }
+
 }
 

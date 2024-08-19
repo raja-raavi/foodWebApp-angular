@@ -4,6 +4,7 @@ import { FoodItemsComponent } from './food-items.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { InvalidSearchComponent } from './invalid-search/invalid-search.component';
 import { CartComponent } from './cart/cart.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'food-menu/:id', component: FoodMenuComponent},
   {path: 'food-menu', component: FoodMenuComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'place-order', component: PlaceOrderComponent},
   {path: '**', component: InvalidSearchComponent}
 ];
 

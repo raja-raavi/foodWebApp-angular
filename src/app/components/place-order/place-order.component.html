@@ -1,0 +1,106 @@
+<form class="place-order" #addressForm="ngForm">
+    <div class="place-order-left">
+        <p class="title">Delivery Information</p>
+        <div class="multi-fields">
+            <input type="text" placeholder="First Name" name="firstName" required ngModel />
+            <input type="text" placeholder="Last Name" name="lastName" required ngModel />
+        </div>
+        <!-- checking for first name -->
+        <div class="error-container">
+            <div *ngIf="addressForm.controls['firstName']?.touched && addressForm.controls['firstName']?.errors"
+                class="error-msg">
+                <p class="para" *ngIf="addressForm.controls['firstName']?.errors?.['required']">First Name is Required
+                </p>
+            </div>
+            <!-- checking for Last name -->
+            <div *ngIf="addressForm.controls['lastName']?.touched && addressForm.controls['lastName']?.errors"
+                class="error-msg">
+                <p class="para" *ngIf="addressForm.controls['lastName']?.errors?.['required']">Last Name is Required</p>
+            </div>
+        </div>
+        <input type="email" placeholder="Email Address" name="email" required ngModel />
+        <!-- checking for email -->
+        <div *ngIf="addressForm.controls['email']?.touched && addressForm.controls['email']?.errors" class="error-msg">
+            <p class="para" *ngIf="addressForm.controls['email']?.errors?.['required']">Email is Required</p>
+        </div>
+        <input type="text" placeholder="Street" name="street" required ngModel />
+        <!-- checking for street -->
+        <div *ngIf="addressForm.controls['street']?.touched && addressForm.controls['street']?.errors"
+            class="error-msg">
+            <p class="para" *ngIf="addressForm.controls['street']?.errors?.['required']">Street is Required</p>
+        </div>
+        <div class="multi-fields">
+            <input type="text" placeholder="City" name="city" required ngModel />
+            <input type="text" placeholder="State" name="state" required ngModel />
+        </div>
+        <!-- checking for city -->
+        <div class="error-container">
+            <div *ngIf="addressForm.controls['city']?.touched && addressForm.controls['city']?.errors"
+                class="error-msg">
+                <p class="para" *ngIf="addressForm.controls['city']?.errors?.['required']">City Name is Required
+                </p>
+            </div>
+            <!-- checking for state -->
+            <div *ngIf="addressForm.controls['state']?.touched && addressForm.controls['state']?.errors"
+                class="error-msg">
+                <p class="para" *ngIf="addressForm.controls['state']?.errors?.['required']">State Name is Required</p>
+            </div>
+        </div>
+        <div class="multi-fields">
+            <input type="text" placeholder="Zipcode" name="zipcode" required ngModel />
+            <input type="text" placeholder="Country" name="country" required ngModel />
+        </div>
+        <!-- checking for zipcode -->
+        <div class="error-container">
+            <div *ngIf="addressForm.controls['zipcode']?.touched && addressForm.controls['zipcode']?.errors"
+                class="error-msg">
+                <p class="para" *ngIf="addressForm.controls['zipcode']?.errors?.['required']">Zipcode is Required
+                </p>
+            </div>
+            <!-- checking for country -->
+            <div *ngIf="addressForm.controls['country']?.touched && addressForm.controls['country']?.errors"
+                class="error-msg">
+                <p class="para" *ngIf="addressForm.controls['country']?.errors?.['required']">Country Name is Required
+                </p>
+            </div>
+        </div>
+        <input type="text" placeholder="phone" name="phone" required ngModel />
+        <!-- checking for mobile No -->
+        <div *ngIf="addressForm.controls['phone']?.touched && addressForm.controls['phone']?.errors" class="error-msg">
+            <p class="para" *ngIf="addressForm.controls['phone']?.errors?.['required']">Phone Number is Required</p>
+        </div>
+        <div class="button-container">
+            <button (click)="save(addressForm)" (click)="showPopup()">Save</button>
+            <!-- <button>Edit</button> -->
+        </div>
+    </div>
+
+    <div class="place-order-right">
+        <div class=" cart-total">
+            <p class="cart-total-heading">Cart Totals</p>
+            <div>
+                <div class="cart-total-details">
+                    <p>Sub Total</p>
+                    <p>${{subTotal}}</p>
+                </div>
+                <hr />
+                <div class="cart-total-details">
+                    <p>Delivey Fee</p>
+                    <p>${{deliveryFee}}</p>
+                </div>
+                <hr />
+                <div class="cart-total-details">
+                    <b>Total</b>
+                    <b>${{Total}}</b>
+                </div>
+                <button (click)="proceedToPayment()" (click)="showPopup()">PROCEED TO PAYMENT</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- to access data from cart to placeOrder also by using HIDDEN we are hiding the cart.html -->
+<app-cart hidden (cartData)="receiveCartData($event)"></app-cart>
+
+<!-- to Display poppup message -->
+<app-popup *ngIf="popupService.popup$ | async as popup"></app-popup>

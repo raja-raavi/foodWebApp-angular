@@ -7,12 +7,12 @@
     <ul class="navbar-menu">
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
         <li [routerLinkActive]="'active'"><a routerLink="/food-items/food-menu/0">Menu</a></li>
-        <li [routerLinkActive]="'active'"><a>Top sellers</a></li>
+        <li [routerLinkActive]="'active'"><a routerLink="/food-items/place-order">Top sellers</a></li>
         <li [routerLinkActive]="'active'"><a>Contact us</a></li>
     </ul>
 
     <!-- nav bar right side icons -->
-    <div class="navbar-right">
+    <div class=" navbar-right">
         <img src="../../../assets/images/search_icon.png" alt="">
         <div class="navbar-serach-icon">
             <img src="../../../assets/images/basket_icon.png" alt="" routerLink="/food-items/cart">
