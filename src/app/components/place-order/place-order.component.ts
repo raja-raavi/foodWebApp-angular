@@ -3,6 +3,8 @@ import { FoodListService } from '../../services/food-list.service';
 import { PopupService } from '../../services/popup.service';
 import { PopupComponent } from '../popup/popup.component';
 import { ChangeDetectorRef } from '@angular/core';
+import { TotalService } from '../../services/total.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-place-order',
@@ -16,6 +18,7 @@ export class PlaceOrderComponent  {
   subTotal: number = 0;
   deliveryFee: number = 0;
   Total: number = 0;
+  
 
   //accesing all the data from CartComponent
   receiveCartData($event) {
@@ -26,7 +29,7 @@ export class PlaceOrderComponent  {
     this.cdRef.detectChanges();
   }
 
-  constructor(private foodListService: FoodListService, public popupService: PopupService, private cdRef: ChangeDetectorRef){
+  constructor(private foodListService: FoodListService, public popupService: PopupService, private cdRef: ChangeDetectorRef,      private router: Router, private totalService: TotalService){
     
   }
   
@@ -64,6 +67,7 @@ export class PlaceOrderComponent  {
   proceedToPayment(){    
     if(this.isaddressFormSubmitted){
       this.popupService.popupMessage = "congrats"
+      this.router.navigate(['/food-items/payment'])
     }else{
       this.popupService.popupMessage = "Please add Delivery Info to proceed furtherly..."
     }

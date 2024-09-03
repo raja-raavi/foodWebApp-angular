@@ -1,0 +1,41 @@
+
+.paypal-container{
+    padding: 150px;
+}
+
+.amount{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: tomato;
+}
+
+.total{
+    color: green;
+}
+
+.info{
+    font-size: 20px;
+    font-weight: 300px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: red;
+}
+
+.pay{
+    margin-left: 80px;
+}
+
+.paypal-container button{
+    border: none;
+    color: white;
+    background-color: tomato;
+    width: max(10vw, 100px);
+    padding: 12px;
+    gap: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 380px;
+}

@@ -5,6 +5,8 @@ import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { InvalidSearchComponent } from './invalid-search/invalid-search.component';
 import { CartComponent } from './cart/cart.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { PaymentConfirmedComponent } from './payment-confirmed/payment-confirmed.component';
 
 
 const routes: Routes = [
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'food-menu', component: FoodMenuComponent},
   {path: 'cart', component: CartComponent},
   {path: 'place-order', component: PlaceOrderComponent},
+  {path: 'payment', component: PaymentPageComponent},
+  {path: 'payment-confimed', component: PaymentConfirmedComponent},
   {path: '**', component: InvalidSearchComponent}
 ];
 

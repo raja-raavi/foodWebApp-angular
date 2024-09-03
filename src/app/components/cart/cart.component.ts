@@ -3,6 +3,7 @@ import { FoodListService } from '../../services/food-list.service';
 import { PopupService } from '../../services/popup.service';
 import { PopupComponent } from '../popup/popup.component';
 import { Router } from '@angular/router';
+import { TotalService } from 'src/app/services/total.service';
 
 
 @Component({
@@ -20,16 +21,17 @@ export class CartComponent implements OnInit{
   
   @Output() cartData = new EventEmitter(); //emitting data
 
-  constructor(private foodListService: FoodListService, public popupService: PopupService, private router: Router){
+  constructor(private foodListService: FoodListService, public popupService: PopupService, private router: Router,
+   private totalService: TotalService){
 
-  }
+   }
 
   
 
   ngOnInit(){
     this.cartItems = this.foodListService.getCartItems().filter((item) => item.food_quantity > 0);
     this.calculateTotals();
-
+    
     //emitting the data to placeOrder compoenent
     this.cartData.emit({
       cartItems: this.cartItems,
@@ -60,6 +62,9 @@ export class CartComponent implements OnInit{
     this.deliveryFee = this.getDeliveryFee(this.subTotal);
     // Calculate total
     this.Total = this.subTotal + this.deliveryFee;
+
+    //passing total amount to payment page compoenent
+    this.totalService.total = this.Total
   }
   
   getDeliveryFee(subTotal: number){

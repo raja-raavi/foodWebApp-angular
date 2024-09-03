@@ -10,6 +10,9 @@ import { PopupComponent } from './popup/popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { PaymentConfirmedComponent } from './payment-confirmed/payment-confirmed.component';
+
 
 
 @NgModule({
@@ -21,12 +24,14 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
     PopupComponent,
     PlaceOrderComponent,
     PaymentPageComponent,
+    PaymentConfirmedComponent,
   ],
   imports: [
     CommonModule,
     FoodItemsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPayPalModule
   ]
 })
 export class FoodItemsModule { }
