@@ -19,11 +19,12 @@ export class HomeComponent {
 
    ngOnInit(){
     //getting name form local storage
-    this.userName = localStorage.getItem('userName').charAt(0).toUpperCase() + localStorage.getItem('userName').slice(1).toLowerCase();
+    this.userName = localStorage.getItem('userName');
 
     //setting message
-    const time = new Date().getHours();
-    this.message = (time >= 0 && time < 12) ? 'Good Morning' : (time >= 12 && time < 17) ? 'Good Afternoon' : 'Good Evening';
+    const time = new Date().getHours();   
+    this.message = (time >= 0 && time < 12) ? 'Good Morning' : (time >= 12 && time < 16) ? 'Good Afternoon' : 'Good Evening';
        
    }
+
 }

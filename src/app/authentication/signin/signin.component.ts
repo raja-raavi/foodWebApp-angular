@@ -56,7 +56,7 @@ export class SigninComponent {
       })
       if(result){
         alert("You are SuccessFully LoggedIn!!!");
-        localStorage.setItem("userName", signinForm.value.userName.toLowerCase());
+        localStorage.setItem("userName", signinForm.value.userName.charAt(0).toUpperCase() + localStorage.getItem('userName').slice(1).toLowerCase());
         localStorage.setItem("email",signinForm.value.email);
         localStorage.setItem("password",signinForm.value.password);
         signinForm.reset();

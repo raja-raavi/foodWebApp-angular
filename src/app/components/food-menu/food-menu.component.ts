@@ -23,7 +23,7 @@ export class FoodMenuComponent implements OnInit{
     
 
     this.activatedRoute.params.subscribe(data => {
-      console.log(`The id is ${data['id']}`);
+      //console.log(`The id is ${data['id']}`);
       this.itemId = data['id']
     })
 

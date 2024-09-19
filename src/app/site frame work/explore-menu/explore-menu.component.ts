@@ -36,7 +36,7 @@ export class ExploreMenuComponent {
     // Get the query parameter
     this.actiatedRoute.queryParams.subscribe(params => {
       this.userCategory = params['selectedCategory'];
-      console.log('Query Parameter:', this.userCategory);
+      //console.log('Query Parameter:', this.userCategory);
       this.filterFoodList();
     });
    }
