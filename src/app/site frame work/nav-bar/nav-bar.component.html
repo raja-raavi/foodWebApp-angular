@@ -12,12 +12,21 @@
     </ul>
 
     <!-- nav bar right side icons -->
-    <div class=" navbar-right">
+    <div class="navbar-right">
         <img src="../../../assets/images/search_icon.png" alt="">
         <div class="navbar-serach-icon">
             <img src="../../../assets/images/basket_icon.png" alt="" routerLink="/food-items/cart">
             <div class="dot"></div>
         </div>
-        <button routerLink="/auth/signIn">sign in</button>
+        <!-- User icon and dropdown trigger -->
+        <div class="nav-bar-profile-container" (click)="toggleDropdown()">
+            <img src="../../../assets/images/user.png" class="nav-bar-profile" *ngIf="regUsersService.isUserLoggedIn()">
+            <!-- Dropdown menu -->
+            <div class="dropdown" *ngIf="dropdownOpen">
+                <p>Name: {{userName}}</p>
+                <button (click)="signOut()">sign out</button>
+            </div>
+        </div>
+        <button [routerLink]="['/auth/signIn']" *ngIf="!regUsersService.isUserLoggedIn()">sign in</button>
     </div>
 </div>

@@ -59,6 +59,85 @@
     cursor: pointer;
   }
 
+  .nav-bar-profile{
+    width: 35px;
+  }
+
+/* Profile container - relative positioning for dropdown */
+.nav-bar-profile-container {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown menu with stylish gradient background and smoother transitions */
+.dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 240px; /* Slightly wider for better balance */
+  background: linear-gradient(135deg, #f9f9f9 0%, #f1f1f1 100%); /* Soft gradient background */
+  border-radius: 12px; /* Softer rounded corners */
+  padding: 20px; /* More space inside */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow for modern feel */
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Elegant easing */
+}
+
+/* Show the dropdown on toggle */
+.nav-bar-profile-container.open .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Stylish dropdown text */
+.dropdown p {
+  margin: 0 0 20px 0;
+  font-size: 18px; /* Slightly larger text */
+  color: #444; /* Darker gray for a modern look */
+  font-weight: 600; /* Bold text */
+  text-align: center;
+  line-height: 1.6; /* More breathing space */
+}
+
+/* Logout button with modern styles */
+.dropdown button {
+  width: 100%;
+  padding: 14px; /* More padding for a better feel */
+  background-color: #ff6347; /* Bright, vibrant tomato color */
+  background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%); /* Gradient button background */
+  color: #fff;
+  border: none;
+  border-radius: 12px; /* Softer round corners */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for the logout button */
+.dropdown button:hover {
+  background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Subtle hover effect */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+/* Optional hover effect to display dropdown */
+.nav-bar-profile-container:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Subtle border effect for button hover */
+.dropdown button:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Slightly stronger hover shadow */
+}
+
+
   /***********Responsive*************/
 
   @media (max-width:1050px){

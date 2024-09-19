@@ -1,16 +1,20 @@
-.signin-popup{
-    position: absolute;
+
+
+.signin-popup {
+    position: fixed; /* Use fixed to keep it centered even on scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally centered */
+    align-items: center; /* Vertically centered */
     z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: #00000090;
-    display: grid;
 }
 
-.signin-popup-container{
-    place-self: center;
+.signin-popup-container {
     width: max(23vw, 330px);
-    color: #808080;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -18,36 +22,38 @@
     padding: 25px 30px;
     border-radius: 8px;
     font-size: 14px;
-    animation: fadeIn 0.5s;
+    color: #808080;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    animation: fadeIn 0.5s ease;
 }
 
-.signin-popup-title{
+.signin-popup-title {
     display: flex;
+    /* justify-content: flex-end; */
     justify-content: space-between;
     align-items: center;
-    color: black;
+    color: tomato;
 }
 
-.signin-popup-title img{
-    margin-left: 260px;
+.signin-popup-title img {
     width: 16px;
     cursor: pointer;
 }
 
-.signin-popup-inputs{
+.signin-popup-inputs {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.signin-popup-inputs input{
+.signin-popup-inputs input {
     outline: none;
     border: 1px solid #c9c9c9;
     padding: 10px;
     border-radius: 4px;
 }
 
-.signin-popup-container button{
+.signin-popup-container button {
     border: none;
     padding: 10px;
     border-radius: 4px;
@@ -57,14 +63,13 @@
     cursor: pointer;
 }
 
-.signin-popup-condition{
+.signin-popup-condition {
     display: flex;
     align-items: start;
     gap: 8px;
-    margin-top: -15px;
 }
 
-.signin-popup-condition input{
+.signin-popup-condition input {
     margin-top: 5px;
 }
 
@@ -72,4 +77,17 @@
     color: tomato;
     font-weight: 500;
     cursor: pointer;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-touched{
+    border: 2px solid green;
+}
+
+.errors-messages {
+    color: red;
+    margin-bottom: -20px; /* Add this line */
 }

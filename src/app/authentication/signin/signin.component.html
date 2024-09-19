@@ -1,18 +1,55 @@
 <div class="signin-popup">
-    <form class="signin-popup-container">
+    <form class="signin-popup-container" [formGroup]="signinForm">
         <div class="signin-popup-title">
+            <h3>Signin Form</h3>
             <img src="../../../assets/images/cross_icon.png" routerLink="">
         </div>
         <div class="signin-popup-inputs">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your email">
-            <input type="password" placeholder="Your Password">
+            <!-- user name -->
+            <input type="text" placeholder="Your Name" formControlName="userName" required />
+            <div class="errors-messages">
+                <p
+                    *ngIf="this.signinForm.get('userName').touched && this.signinForm.get('userName').errors?.['required']">
+                    user name is required
+                </p>
+            </div>
+            <!-- email -->
+            <input type="email" placeholder="Your email" formControlName="email">
+            <div class="errors-messages">
+                <p *ngIf="this.signinForm.get('email').touched && this.signinForm.get('email').errors?.['required']">
+                    email is required
+                </p>
+                <p
+                    *ngIf="this.signinForm.get('email').touched && this.signinForm.get('email').errors?.['invalidEmail']">
+                    invalid email format
+                </p>
+            </div>
+            <!-- password -->
+            <input type="password" placeholder="Your Password" formControlName="password">
+            <div class="errors-messages">
+                <p
+                    *ngIf="this.signinForm.get('password').touched && this.signinForm.get('password').errors?.['required']">
+                    password is required
+                </p>
+                <p
+                    *ngIf="this.signinForm.get('password').touched && this.signinForm.get('password').errors?.['minlength']">
+                    password requires minimum 8 characters
+                </p>
+                <p
+                    *ngIf="this.signinForm.get('password').touched && this.signinForm.get('password').errors?.['noUpperCase']">
+                    password contains atleast 1 uppercase letter
+                </p>
+                <p
+                    *ngIf="this.signinForm.get('password').touched && this.signinForm.get('password').errors?.['noNumber']">
+                    password contains atleast 1 number
+                </p>
+            </div>
         </div>
-        <button>sign in</button>
+        <button (click)="submit(signinForm)" [disabled]="signinForm.invalid">sign in</button>
         <div class="signin-popup-condition">
             <input type="checkbox">
             <p>By continuing, I agree to the terms & privacy policy</p>
         </div>
-        <p>Don't have an account? <span>click here</span></p>
+        <p>Don't have an account?<span [routerLink]="['/auth/signUp']">click here</span></p>
     </form>
 </div>

@@ -6,5 +6,5 @@ import { loadStripe, Stripe } from '@stripe/stripe-js';
 })
 export class PaymentService {
 
- paymentId: any;  
+ paymentId :any = 'ERP10468R'  
 }

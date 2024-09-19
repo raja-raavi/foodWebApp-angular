@@ -1,0 +1,97 @@
+
+
+.signin-popup {
+    position: fixed; /* Use fixed to keep it centered even on scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally centered */
+    align-items: center; /* Vertically centered */
+    z-index: 1;
+}
+
+.signin-popup-container {
+    width: max(23vw, 330px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #808080;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    animation: fadeIn 0.5s ease;
+}
+
+.signin-popup-title {
+    display: flex;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+    align-items: center;
+    color: tomato;
+}
+
+.signin-popup-title img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.signin-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.signin-popup-inputs input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.signin-popup-container button {
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: tomato;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.signin-popup-condition {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+}
+
+.signin-popup-condition input {
+    margin-top: 5px;
+}
+
+.signin-popup p span {
+    color: tomato;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-touched{
+    border: 2px solid green;
+}
+
+.errors-messages {
+    color: red;
+    margin-bottom: -20px; /* Add this line */
+}
+
+
+
+

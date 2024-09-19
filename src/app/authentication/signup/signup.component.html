@@ -1,1 +1,77 @@
-<p>signup works!</p>
+<form [formGroup]="signupForm">
+    <div class="signin-popup">
+        <form class="signin-popup-container">
+            <div class="signin-popup-title">
+                <h3>Signup Form</h3>
+                <img src="../../../assets/images/cross_icon.png" routerLink="">
+            </div>
+            <div class="signin-popup-inputs">
+                <!-- user name -->
+                <input type="text" placeholder="Your Name" formControlName="userName" required />
+                <div class="errors-messages">
+                    <p
+                        *ngIf="this.signupForm.get('userName').touched && this.signupForm.get('userName').errors?.['required']">
+                        user name is required
+                    </p>
+                </div>
+                <!-- email -->
+                <input type="email" placeholder="Your email" formControlName="email">
+                <div class="errors-messages">
+                    <p
+                        *ngIf="this.signupForm.get('email').touched && this.signupForm.get('email').errors?.['required']">
+                        email is required
+                    </p>
+                    <p
+                        *ngIf="this.signupForm.get('email').touched && this.signupForm.get('email').errors?.['invalidEmail']">
+                        invalid email format
+                    </p>
+                    <p
+                        *ngIf="this.signupForm.get('email').touched && this.signupForm.get('email').errors?.['duplicateEmail']">
+                        email already exists
+                    </p>
+                </div>
+                <!-- password -->
+                <input type="password" placeholder="Your Password" formControlName="password">
+                <div class="errors-messages">
+                    <p
+                        *ngIf="this.signupForm.get('password').touched && this.signupForm.get('password').errors?.['required']">
+                        password is required
+                    </p>
+                    <p
+                        *ngIf="this.signupForm.get('password').touched && this.signupForm.get('password').errors?.['minlength']">
+                        password requires minimum 8 characters
+                    </p>
+                    <p
+                        *ngIf="this.signupForm.get('password').touched && this.signupForm.get('password').errors?.['noUpperCase']">
+                        password contains atleast 1 uppercase letter
+                    </p>
+                    <p
+                        *ngIf="this.signupForm.get('password').touched && this.signupForm.get('password').errors?.['noNumber']">
+                        password contains atleast 1 number
+                    </p>
+                </div>
+                <!-- confirm password -->
+                <input type="password" placeholder="Conifrm password" formControlName="confirmPassword">
+                <div class="errors-messages">
+                    <p
+                        *ngIf="this.signupForm.get('confirmPassword').touched && this.signupForm.get('confirmPassword').errors?.['required']">
+                        confirm password is required
+                    </p>
+                    <p
+                        *ngIf="this.signupForm.get('confirmPassword').touched && this.signupForm.get('confirmPassword').errors?.['minlength']">
+                        confirm password must be 8 characters
+                    </p>
+                    <p *ngIf="signupForm.get('confirmPassword').touched && !confirmPassword()">
+                        {{ confirmPass }}
+                    </p>
+                </div>
+            </div>
+            <button type="submit" (click)="submitClicked(signupForm)" [disabled]="signupForm.invalid">sign up</button>
+            <div class="signin-popup-condition">
+                <input type="checkbox">
+                <p>By continuing, I agree to the terms & privacy policy</p>
+            </div>
+            <p>Already have an account?<span [routerLink]="['/auth/signIn']">click here</span></p>
+        </form>
+    </div>
+</form>

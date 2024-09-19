@@ -1,10 +1,16 @@
 <div class="confirmation">
-    <h2>Your payment is completed Successfully, Thank you for Ordering</h2>
+    <div class="confirmation-box">
+        <div class="icon-box">
+            <span class="checkmark">✔</span>
+        </div>
+        <h2 class="title">Payment Confirmed</h2>
+        <p>Your order was successfully processed.</p>
 
-    <div class="confirmation-details">
-        <h4>Payment Id : {{transactionId}}</h4>
-        <h4>payment Method : {{paymentMethod}}</h4>
+        <div class="confirmation-details">
+            <h4><strong>Transaction ID:</strong> {{transactionId}}</h4>
+            <h4><strong>Payment Method:</strong> {{paymentMethod}}</h4>
+        </div>
+
+        <button (click)="homePage()" class="home-btn">Go to Home</button>
     </div>
-
-    <button (click)="homePage()">Home Page</button>
 </div>

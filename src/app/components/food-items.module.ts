@@ -32,6 +32,9 @@ import { PaymentConfirmedComponent } from './payment-confirmed/payment-confirmed
     FormsModule,
     ReactiveFormsModule,
     NgxPayPalModule
+  ],
+  exports: [
+    PopupComponent 
   ]
 })
 export class FoodItemsModule { }

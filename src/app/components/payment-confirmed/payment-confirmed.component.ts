@@ -16,9 +16,9 @@ export class PaymentConfirmedComponent {
 
   }
 
-  // ngOnInit(){
-  //  this.transactionId =  this.paymentService.paymentId
-  // }
+  ngOnInit(){
+   this.transactionId =  this.paymentService.paymentId
+  }
 
   homePage(){
     this.router.navigate([''])

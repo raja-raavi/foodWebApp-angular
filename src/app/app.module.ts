@@ -13,6 +13,8 @@ import { menuStyleDirective } from './Directives/menuStyle.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FoodItemsModule } from './components/food-items.module';
+
 
 
 
@@ -24,13 +26,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ExploreMenuComponent,
     TopDishesComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FoodItemsModule
   ],
   providers: [MenuListService, FoodListService, menuStyleDirective],
   bootstrap: [AppComponent]

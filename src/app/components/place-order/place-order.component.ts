@@ -19,8 +19,11 @@ export class PlaceOrderComponent  {
   deliveryFee: number = 0;
   Total: number = 0;
   
+  constructor(private foodListService: FoodListService, public popupService: PopupService, private cdRef: ChangeDetectorRef,      private router: Router, private totalService: TotalService){
+    
+  }
 
-  //accesing all the data from CartComponent
+    //accesing all the data from CartComponent
   receiveCartData($event) {
     this.cartData = $event;
     this.subTotal = this.cartData.subTotal;
@@ -28,11 +31,11 @@ export class PlaceOrderComponent  {
     this.Total = this.cartData.Total;
     this.cdRef.detectChanges();
   }
-
-  constructor(private foodListService: FoodListService, public popupService: PopupService, private cdRef: ChangeDetectorRef,      private router: Router, private totalService: TotalService){
-    
-  }
   
+  ngOnInit(){
+    this.Total = this.totalService.total;
+    this.subTotal = this.totalService.total - this.deliveryFee;
+  }
   //capturing the DeliveryInfo Details provided by user
   save(addressForm){
     this.isaddressFormSubmitted = true
@@ -61,7 +64,7 @@ export class PlaceOrderComponent  {
       this.popupService.popupMessage = "Please Fill all the Fields"
       this.isaddressFormSubmitted = false;
     }
-       //return this.isaddressFormSubmitted;
+       return this.isaddressFormSubmitted;
   }
   
   proceedToPayment(){    

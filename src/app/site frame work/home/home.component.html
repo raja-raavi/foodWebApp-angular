@@ -1,6 +1,7 @@
 <div class="header">
     <div class="header-contents">
-        <h2>Order Your Favourite Food Here</h2>
+        <h4 *ngIf="regUsersService.isUserLoggedIn">Hey {{userName}}, {{message}}</h4>
+        <h5>Order Your Favourite Food Here</h5>
         <p>Choose from a diverse menu featuring a delectable array of dishes with the finest ingridents and culinary
             expertise. Our mission is to satisfy your cravings and elevaate your dining experience, one delicious meal
             at a

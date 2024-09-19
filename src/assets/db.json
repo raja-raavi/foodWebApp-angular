@@ -405,90 +405,14 @@
       "id": "b434"
     }
   ],
-  "DeliveryInfo": [
+  "DeliveryInfo": [],
+  "registeredUsers": [
     {
-      "id": "4384",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "841d",
-      "firstName": "Raja",
-      "lastName": "Naidu",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Arts College,Behind Shadikhan , Rajahmundry",
-      "city": "Rajahmundry",
-      "state": "Andhra Pradesh",
-      "zipcode": "533106",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "2edb",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "f69b",
-      "firstName": "Raja",
-      "lastName": "Naidu",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Arts College,Behind Shadikhan , Rajahmundry",
-      "city": "Rajahmundry",
-      "state": "Andhra Pradesh",
-      "zipcode": "533106",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "de9e",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "5de7",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "3b8e",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
+      "id": "01d5",
+      "userName": "raja",
+      "email": "test@gmail.com",
+      "password": "Raja@123",
+      "confirmPassword": "Raja@123"
     }
   ]
 }
