@@ -7,16 +7,17 @@ import { CartComponent } from './cart/cart.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { PaymentConfirmedComponent } from './payment-confirmed/payment-confirmed.component';
+import { AuthenticationGuard } from '../guards/authentication.guard';
 
 
 const routes: Routes = [
   { path: '', component: FoodItemsComponent },
   {path:'food-menu/:id', component: FoodMenuComponent},
-  {path: 'food-menu', component: FoodMenuComponent},
+  {path: 'food-menu', component: FoodMenuComponent, canActivate: [AuthenticationGuard]},
   {path: 'cart', component: CartComponent},
-  {path: 'place-order', component: PlaceOrderComponent},
-  {path: 'payment', component: PaymentPageComponent},
-  {path: 'payment-confimed', component: PaymentConfirmedComponent},
+  {path: 'place-order', component: PlaceOrderComponent, canActivate: [AuthenticationGuard]},
+  {path: 'payment', component: PaymentPageComponent, canActivate: [AuthenticationGuard]},
+  {path: 'payment-confimed', component: PaymentConfirmedComponent, canActivate: [AuthenticationGuard]},
   {path: '**', component: InvalidSearchComponent}
 ];
 

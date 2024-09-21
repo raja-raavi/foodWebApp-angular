@@ -2,6 +2,9 @@ import { AfterContentChecked, Component, OnInit} from '@angular/core';
 import { foodList } from '../../models/food-list';
 import { ActivatedRoute } from '@angular/router';
 import { FoodListService } from '../../services/food-list.service';
+import { RegisteredUsersDataService } from 'src/app/services/registered-users-data.service';
+import { PopupService } from 'src/app/services/popup.service';
+import { PopupComponent } from '../popup/popup.component';
 
 
 @Component({
@@ -17,7 +20,7 @@ export class FoodMenuComponent implements OnInit{
   showCounter: boolean[] = [];
   selectedItems: any = {}; // Initialize an empty object to store all selected items
 
-  constructor(private foodListService: FoodListService, private activatedRoute: ActivatedRoute) { }
+  constructor(private foodListService: FoodListService, private activatedRoute: ActivatedRoute, private regUsersService: RegisteredUsersDataService, public popupService: PopupService) { }
 
   ngOnInit() {
     
@@ -38,9 +41,15 @@ export class FoodMenuComponent implements OnInit{
   }
 
   addButtonClicked(i) {
-    this.showCounter[i] = true;
-    this.foodListResult[i].food_quantity = 1;
-    this.updateSelectedItems(i);
+    //checking whether user is loggedin or not
+    if (!this.regUsersService.isUserLoggedIn()) {
+      this.popupService.popupMessage = "Opps......You have to login to access this component😒";
+      this.showPopup();
+    } else {
+      this.showCounter[i] = true;
+      this.foodListResult[i].food_quantity = 1;
+      this.updateSelectedItems(i);
+    }
   }
 
   decreaseItemCount(index: number) {
@@ -63,6 +72,10 @@ export class FoodMenuComponent implements OnInit{
     };
      //console.log('Selected Items:', this.selectedItems); 
      this.foodListService.selectedItems = Object.values(this.selectedItems); 
+  }
+
+  showPopup(){
+    this.popupService.openPopup(PopupComponent, this.popupService.popupMessage);
   }
 
 

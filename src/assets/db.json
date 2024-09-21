@@ -413,6 +413,27 @@
       "email": "test@gmail.com",
       "password": "Raja@123",
       "confirmPassword": "Raja@123"
+    },
+    {
+      "id": "2ba0",
+      "userName": "kharim",
+      "email": "kharim@gmail.com",
+      "password": "Kharim@123",
+      "confirmPassword": "Kharim@123"
+    },
+    {
+      "id": "8021",
+      "userName": "vani",
+      "email": "vani@gmail.com",
+      "password": "Vani@123",
+      "confirmPassword": "Vani@123"
+    },
+    {
+      "id": "1038",
+      "userName": "raja",
+      "email": "user@gmail.com",
+      "password": "Raja@123",
+      "confirmPassword": "Raja@123"
     }
   ]
 }

@@ -6,25 +6,25 @@ import { RegisteredUsersDataService } from 'src/app/services/registered-users-da
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
   userName: any;
   message: any;
-  
-   constructor(public regUsersService: RegisteredUsersDataService){
 
-   }
+  constructor(public regUsersService: RegisteredUsersDataService) {}
 
-   ngOnInit(){
+  ngOnInit() {
     //getting name form local storage
     this.userName = localStorage.getItem('userName');
 
     //setting message
-    const time = new Date().getHours();   
-    this.message = (time >= 0 && time < 12) ? 'Good Morning' : (time >= 12 && time < 16) ? 'Good Afternoon' : 'Good Evening';
-       
-   }
-
+    const time = new Date().getHours();
+    this.message =
+      time >= 0 && time < 12
+        ? 'Good Morning'
+        : time >= 12 && time < 16
+        ? 'Good Afternoon'
+        : 'Good Evening';
+  }
 }

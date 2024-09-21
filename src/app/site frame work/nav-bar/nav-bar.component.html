@@ -1,14 +1,14 @@
 <div class="navbar">
 
     <!-- main heading -->
-    <h2 class="logo">Food Application</h2>
+    <h2 class="logo" routerLink="">Foodie App</h2>
 
     <!-- nav bar li items -->
     <ul class="navbar-menu">
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
         <li [routerLinkActive]="'active'"><a routerLink="/food-items/food-menu/0">Menu</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="/food-items/place-order">Top sellers</a></li>
-        <li [routerLinkActive]="'active'"><a>Contact us</a></li>
+        <li [routerLinkActive]="'active'"><a routerLink="/aboutus">about us</a></li>
+        <li [routerLinkActive]="'active'"><a routerLink="/contactus">Contact us</a></li>
     </ul>
 
     <!-- nav bar right side icons -->

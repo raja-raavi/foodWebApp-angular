@@ -4,6 +4,7 @@ import { PopupService } from '../../services/popup.service';
 import { PopupComponent } from '../popup/popup.component';
 import { Router } from '@angular/router';
 import { TotalService } from 'src/app/services/total.service';
+import { RegisteredUsersDataService } from 'src/app/services/registered-users-data.service';
 
 
 @Component({
@@ -22,15 +23,20 @@ export class CartComponent implements OnInit{
   @Output() cartData = new EventEmitter(); //emitting data
 
   constructor(private foodListService: FoodListService, public popupService: PopupService, private router: Router,
-   private totalService: TotalService){
+   private totalService: TotalService, private regUsersService: RegisteredUsersDataService){
 
    }
 
   
 
   ngOnInit(){
-    this.cartItems = this.foodListService.getCartItems().filter((item) => item.food_quantity > 0);
-    this.calculateTotals();
+    if (!this.regUsersService.isUserLoggedIn() || this.foodListService.getCartItems().length === 0) {
+      this.cartItems = null; // Set to null if no items in the cart
+    }else{
+      this.cartItems = this.foodListService.getCartItems().filter((item) => item.food_quantity > 0);
+      this.calculateTotals();
+    }
+    
     
     //emitting the data to placeOrder compoenent
     this.cartData.emit({
@@ -46,16 +52,24 @@ export class CartComponent implements OnInit{
     if (this.cartItems[index].food_quantity > 1) {
       this.cartItems[index].food_quantity--;
       this.cartItems[index].total = this.cartItems[index].food_price * this.cartItems[index].food_quantity;
-    } else {
+      console.log(this.cartItems);
+      
+    }else {
       this.cartItems.splice(index, 1);  // remove one element at index
     }
     this.calculateTotals();
+
+    // If no items left in the cart, set cartItems to null to show the empty cart message
+    if (this.cartItems.length === 0) {
+      this.cartItems = null;
+    }
+
   }
   
   //calculating total 
   calculateTotals(){
     this.subTotal = 0;
-    for(let ele of this.cartItems){
+    for(let ele of this.cartItems || []){ // Handle case when cartItems is null
       this.subTotal += ele.food_quantity * ele.food_price;
     }
     // Calculate delivery fee
@@ -116,6 +130,10 @@ export class CartComponent implements OnInit{
   }
 
   popup() {
+    this.popupService.openPopup(PopupComponent, this.popupService.popupMessage);
+  }
+
+  showPopup(){
     this.popupService.openPopup(PopupComponent, this.popupService.popupMessage);
   }
 

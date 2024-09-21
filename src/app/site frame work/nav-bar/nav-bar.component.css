@@ -1,67 +1,68 @@
 .navbar {
-    padding: 8px 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-   
-  }
-  
-  .logo {
-    width: 189px;
-  }
-  
-  .navbar-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    color: black;
-    font-size: 18px;
-  }
-  
-  .navbar-right {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  .navbar button {
-    background: transparent;
-    font-size: 16px;
-    color: #49557e;
-    border: 1px solid tomato;
-    padding: 8px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    text-align: center;
-    transition: 0.6s;
-  }
-  
-  .navbar-right button:hover {
-    background-color: tomato;
-  }
-  
-  .navbar-serach-icon {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .navbar-serach-icon .dot {
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
-  }
-  
-  .navbar-menu {
-    cursor: pointer;
-  }
+  padding: 8px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  .nav-bar-profile{
-    width: 35px;
-  }
+.logo {
+  width: 189px;
+  cursor: pointer;
+  color: tomato;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: black;
+  font-size: 18px;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 8px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.6s;
+}
+
+.navbar-right button:hover {
+  background-color: tomato;
+}
+
+.navbar-serach-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-serach-icon .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: tomato;
+  border-radius: 5px;
+  top: -8px;
+  right: -8px;
+}
+
+.navbar-menu {
+  cursor: pointer;
+}
+
+.nav-bar-profile {
+  width: 35px;
+}
 
 /* Profile container - relative positioning for dropdown */
 .nav-bar-profile-container {
@@ -75,7 +76,11 @@
   top: 110%;
   right: 0;
   width: 240px; /* Slightly wider for better balance */
-  background: linear-gradient(135deg, #f9f9f9 0%, #f1f1f1 100%); /* Soft gradient background */
+  background: linear-gradient(
+    135deg,
+    #f9f9f9 0%,
+    #f1f1f1 100%
+  ); /* Soft gradient background */
   border-radius: 12px; /* Softer rounded corners */
   padding: 20px; /* More space inside */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow for modern feel */
@@ -108,7 +113,11 @@
   width: 100%;
   padding: 14px; /* More padding for a better feel */
   background-color: #ff6347; /* Bright, vibrant tomato color */
-  background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%); /* Gradient button background */
+  background: linear-gradient(
+    135deg,
+    #ff6347 0%,
+    #ff4500 100%
+  ); /* Gradient button background */
   color: #fff;
   border: none;
   border-radius: 12px; /* Softer round corners */
@@ -120,7 +129,11 @@
 
 /* Hover effect for the logout button */
 .dropdown button:hover {
-  background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%); /* Reverse gradient on hover */
+  background: linear-gradient(
+    135deg,
+    #ff4500 0%,
+    #ff6347 100%
+  ); /* Reverse gradient on hover */
   transform: translateY(-2px); /* Subtle hover effect */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
 }
@@ -137,51 +150,51 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Slightly stronger hover shadow */
 }
 
+/*sparkel*/
 
-  /***********Responsive*************/
+/***********Responsive*************/
 
-  @media (max-width:1050px){
-    .navbar .logo{
-      width: 140px;
-    }
-    .navbar-menu{
-      gap: 20px;
-      font-size: 17px;
-    }
-    .navbar-right{
-      gap: 30px;
-    }
-    .navbar-right img{
-      width: 22px;
-    }
-    .navbar-right button{
-      padding: 8px 25px;
-    }
+@media (max-width: 1050px) {
+  .navbar .logo {
+    width: 140px;
   }
-
-  @media (max-width:900px){
-    .navbar .logo{
-      width: 120px;
-    }
-    .navbar-menu{
-      gap: 15px;
-      font-size: 16px;
-    }
-    .navbar-right{
-      gap: 20px;
-    }
-    .navbar-right img{
-      width: 20px;
-    }
-    .navbar-right button{
-      padding: 7px 20px;
-      font-size: 15px;
-    }
+  .navbar-menu {
+    gap: 20px;
+    font-size: 17px;
   }
-
-  @media (max-width:750px){
-    .navbar-menu{
-      display: none;
-    }
+  .navbar-right {
+    gap: 30px;
   }
-  
+  .navbar-right img {
+    width: 22px;
+  }
+  .navbar-right button {
+    padding: 8px 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar .logo {
+    width: 120px;
+  }
+  .navbar-menu {
+    gap: 15px;
+    font-size: 16px;
+  }
+  .navbar-right {
+    gap: 20px;
+  }
+  .navbar-right img {
+    width: 20px;
+  }
+  .navbar-right button {
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar-menu {
+    display: none;
+  }
+}

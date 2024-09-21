@@ -30,3 +30,6 @@
         </div>
     </div>
 </div>
+
+<!-- to Display poppup message -->
+<app-popup *ngIf="popupService.popup$ | async as popup"></app-popup>

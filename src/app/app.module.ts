@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopDishesComponent } from './site frame work/top-dishes/top-dishes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FoodItemsModule } from './components/food-items.module';
+import { AboutusComponent } from './site frame work/aboutus/aboutus.component';
+import { ContactusComponent } from './site frame work/contactus/contactus.component';
 
 
 
@@ -26,6 +28,8 @@ import { FoodItemsModule } from './components/food-items.module';
     FooterComponent,
     ExploreMenuComponent,
     TopDishesComponent,
+    AboutusComponent,
+    ContactusComponent,
 
   ],
   imports: [

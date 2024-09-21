@@ -104,7 +104,7 @@ export class SignupComponent {
       this.regUsersService.registeredUsers(userData).subscribe(data=>{
         this.res = data;
         signupForm.reset();
-        alert('You have Registered Successfully');
+        alert('You have Registered Successfully 😊');
         this.router.navigate(['/auth/signIn']);
       })
     }

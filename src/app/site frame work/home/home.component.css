@@ -1,76 +1,75 @@
 .header {
-    height: 34vw;
-    margin: 30px auto;
-    background: url("../../../assets/images/header_img.png") no-repeat;
-    background-size: contain;
-    position: relative;
-  }
-  
-  .header-contents {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadeIn 3s;
-  }
-  
-  /* .header-contents h2{
+  height: 34vw;
+  margin: 30px auto;
+  background: url("../../../assets/images/header_img.png") no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+}
+
+/* .header-contents h2{
     font-weight: 500;
     color: white;
     font-size: max(3.5vw, 22px);
   } */
 
-  .header-contents h4{
-    font-weight: 500;
-    color: white;
-    font-size: max(2.8vw, 20px);
-  }
+.header-contents h4 {
+  font-weight: 500;
+  color: white;
+  font-size: max(2.8vw, 20px);
+}
 
-  .header-contents h5{
-    font-weight: 500;
-    color: white;
-    font-size: max(2.3vw, 10px);
+.header-contents h5 {
+  font-weight: 500;
+  color: white;
+  font-size: max(2.3vw, 10px);
+}
+
+.header-contents p {
+  color: white;
+  font-size: 1vw;
+}
+
+.header-contents button {
+  border: none;
+  font-size: 16px;
+  color: black;
+  border: 1px solid tomato;
+  padding: 8px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.6s;
+}
+
+/**********RESPONSIVE************/
+
+@media (max-width: 1050px) {
+  .header-contents {
+    max-width: 45%;
   }
-  
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 65%;
+  }
   .header-contents p {
-    color: white;
-    font-size: 1vw;
+    display: none;
   }
-  
+
   .header-contents button {
-    border: none;
-    font-size: 16px;
-    color: black;
-    border: 1px solid tomato;
-    padding: 8px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    text-align: center;
-    transition: 0.6s;
+    padding: 2vw 4vw;
   }
-
-
-  /**********RESPONSIVE************/
-
-  @media (max-width: 1050px){
-    .header-contents{
-      max-width: 45%;
-    }
-  }
-  
-  @media (max-width: 750px){
-    .header-contents{
-      max-width: 65%;
-    }
-    .header-contents p{
-      display: none;
-    }
-
-    .header-contents button{
-      padding: 2vw 4vw;
-    }
-  }
+}
