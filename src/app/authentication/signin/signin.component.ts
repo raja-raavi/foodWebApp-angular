@@ -64,8 +64,27 @@ export class SigninComponent {
   }
 
   submit(signinForm) {
+    //Specifically, in the find method, the callback should return either true or false
     this.regUsersService.getRegisteredUsers().subscribe(
       (data) => {
+        // Check for admin login first
+        if (
+          signinForm.value.userName === 'Admin'.toLocaleLowerCase() &&
+          signinForm.value.email === 'admin@gmail.com' &&
+          signinForm.value.password === 'Admin@123'
+        ) {
+          // Store admin details in localStorage
+          localStorage.setItem('userName', 'Admin');
+          localStorage.setItem('email', 'admin@gmail.com');
+          localStorage.setItem('password', 'Admin@123');
+          localStorage.setItem('role', 'Admin');
+          alert('Admin Successfully Logged In 🤩');
+          signinForm.reset();
+          this.router.navigate(['/adminDashboard/admin-home-page']);
+          return false; // Exit the function after handling admin login
+        }
+
+        // For regular users, continue checking the database
         const result = data.find((res: any) => {
           return (
             res.userName === signinForm.value.userName.toLowerCase() &&
@@ -73,11 +92,14 @@ export class SigninComponent {
             res.password === signinForm.value.password
           );
         });
+
+        //Store user details in localStorage
         if (result) {
           alert('You are SuccessFully LoggedIn 🤩');
           localStorage.setItem('userName', signinForm.value.userName);
           localStorage.setItem('email', signinForm.value.email);
           localStorage.setItem('password', signinForm.value.password);
+          localStorage.setItem('role', 'User');
           signinForm.reset();
           this.router.navigate(['']);
           return true;
@@ -90,5 +112,7 @@ export class SigninComponent {
         alert('Something Went Wrong...Try Again!!! or DataBase is Not Working');
       }
     );
+    console.log(this.regUsersService.isAdminLoggedIn());
+    console.log(this.regUsersService.isUserLoggedIn());
   }
 }

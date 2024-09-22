@@ -31,6 +31,4 @@ export class NavBarComponent {
       localStorage.getItem('userName').charAt(0).toUpperCase() +
       localStorage.getItem('userName').slice(1).toLowerCase();
   }
-
-  ngOnInit() {}
 }

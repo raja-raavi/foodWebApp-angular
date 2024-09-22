@@ -17,9 +17,6 @@ import { FoodItemsModule } from './components/food-items.module';
 import { AboutusComponent } from './site frame work/aboutus/aboutus.component';
 import { ContactusComponent } from './site frame work/contactus/contactus.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +27,6 @@ import { ContactusComponent } from './site frame work/contactus/contactus.compon
     TopDishesComponent,
     AboutusComponent,
     ContactusComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -38,9 +34,9 @@ import { ContactusComponent } from './site frame work/contactus/contactus.compon
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FoodItemsModule
+    FoodItemsModule,
   ],
   providers: [MenuListService, FoodListService, menuStyleDirective],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

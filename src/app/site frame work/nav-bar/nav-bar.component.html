@@ -3,13 +3,28 @@
     <!-- main heading -->
     <h2 class="logo" routerLink="">Foodie App</h2>
 
-    <!-- nav bar li items -->
-    <ul class="navbar-menu">
-        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="/food-items/food-menu/0">Menu</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="/aboutus">about us</a></li>
-        <li [routerLinkActive]="'active'"><a routerLink="/contactus">Contact us</a></li>
-    </ul>
+    <!-- nav bar li items loading condition based-->
+
+    <p *ngIf="regUsersService.isAdminLoggedIn(); then adminNavbar; else userNavbar"></p>
+
+    <ng-template #userNavbar>
+        <ul class="navbar-menu">
+            <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
+            <li [routerLinkActive]="'active'"><a routerLink="/food-items/food-menu/0">Menu</a></li>
+            <li [routerLinkActive]="'active'"><a routerLink="/aboutus">About us</a></li>
+            <li [routerLinkActive]="'active'"><a routerLink="/contactus">Contact us</a></li>
+        </ul>
+    </ng-template>
+
+    <ng-template #adminNavbar>
+        <ul class="navbar-menu" *ngIf="regUsersService.isAdminLoggedIn()">
+            <li [routerLinkActive]="'active'"><a>Get Item</a></li>
+            <li [routerLinkActive]="'active'"><a>Add Item</a></li>
+            <li [routerLinkActive]="'active'"><a>Update Item</a></li>
+            <li [routerLinkActive]="'active'"><a>Delete Item</a></li>
+            <li [routerLinkActive]="'active'"><a>Filter Items</a></li>
+        </ul>
+    </ng-template>
 
     <!-- nav bar right side icons -->
     <div class="navbar-right">
@@ -20,13 +35,15 @@
         </div>
         <!-- User icon and dropdown trigger -->
         <div class="nav-bar-profile-container" (click)="toggleDropdown()">
-            <img src="../../../assets/images/user.png" class="nav-bar-profile" *ngIf="regUsersService.isUserLoggedIn()">
+            <img src="../../../assets/images/user.png" class="nav-bar-profile"
+                *ngIf="regUsersService.isUserLoggedIn() || regUsersService.isAdminLoggedIn()">
             <!-- Dropdown menu -->
             <div class="dropdown" *ngIf="dropdownOpen">
                 <p>Name: {{userName}}</p>
                 <button (click)="signOut()">sign out</button>
             </div>
         </div>
-        <button [routerLink]="['/auth/signIn']" *ngIf="!regUsersService.isUserLoggedIn()">sign in</button>
+        <button [routerLink]="['/auth/signIn']"
+            *ngIf="!regUsersService.isUserLoggedIn() && !regUsersService.isAdminLoggedIn()">sign in</button>
     </div>
 </div>
