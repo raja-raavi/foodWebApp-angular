@@ -1,1 +1,68 @@
-<p>update-item works!</p>
+<p *ngIf="!selectedItem; then allItems; else updateItem"></p>
+
+<ng-template #allItems>
+    <div class="food-display-list">
+        <div class="food-item" *ngFor="let ele of getAllItems">
+            <div class="food-item-image-container">
+                <img [src]="ele.food_image" alt="image" class="food-item-image">
+            </div>
+            <div class="food-item-info">
+                <div class="food-item-name-rating">
+                    <p>{{ele.food_name}}</p>
+                    <img src="../../../assets/images/rating_starts.png" alt="">
+                </div>
+                <p class="food-item-description">{{ele.food_description}}</p>
+                <div class="food-item-priceandBtn">
+                    <p class="food-item-price">${{ele.food_price}}</p>
+                    <button class="food-item-updateBtn" [routerLink]=" ['/adminDashboard/admin-update-item/',ele.id]"
+                        (click)="updateButtonClicked(ele.id)">Update
+                        Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #updateItem>
+    <div class="add">
+        <form class="flex-col" #updatedInfo="ngForm">
+            <div class="add-product-name flex-col">
+                <p>Item Name</p>
+                <input type="text" name="food_name" placeholder="Type Here" required
+                    [(ngModel)]="selectedItem.food_name">
+            </div>
+            <div class="add-item-description flex-col">
+                <p>Item Description</p>
+                <textarea name="food_description" rows="6" placeholder="Write Content Here" required
+                    [(ngModel)]="selectedItem.food_description"></textarea>
+            </div>
+            <div class="add-category-price">
+                <div class="add-category flex-col">
+                    <p>Item category</p>
+                    <select name="food_category" required [(ngModel)]="selectedItem.food_category">
+                        <option value="Salad">Salad</option>
+                        <option value="Rolls">Rolls</option>
+                        <option value="Deserts">Deserts</option>
+                        <option value="Sandwich">Sandwich</option>
+                        <option value="Cake">Cake</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Pure Veg">Pure Veg</option>
+                        <option value="Noodels">Noodels</option>
+                    </select>
+                </div>
+                <div class="add-price flex-col">
+                    <p>Item Price</p>
+                    <input type="number" name="food_price" placeholder="$20" required
+                        [(ngModel)]="selectedItem.food_price">
+                </div>
+            </div>
+            <div class="add-back-buttons">
+                <button type="submit" class="add-button" (click)="updateItemButton(updatedInfo)"
+                    (click)="showPopup()">Update Item</button>
+                <button type="button" class="add-button" (click)="navigateBack()">Go
+                    Back</button>
+            </div>
+        </form>
+    </div>
+    <app-popup *ngIf="popupService.popup$ | async as popup"></app-popup>
+</ng-template>

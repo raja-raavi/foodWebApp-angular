@@ -35,6 +35,7 @@ import { ContactusComponent } from './site frame work/contactus/contactus.compon
     FormsModule,
     ReactiveFormsModule,
     FoodItemsModule,
+    FormsModule,
   ],
   providers: [MenuListService, FoodListService, menuStyleDirective],
   bootstrap: [AppComponent],

@@ -9,7 +9,8 @@ import { UpdateItemComponent } from './AdminComponents/update-item/update-item.c
 import { DeleteItemComponent } from './AdminComponents/delete-item/delete-item.component';
 import { ViewItemComponent } from './AdminComponents/view-item/view-item.component';
 import { FilterItemsComponent } from './AdminComponents/filter-items/filter-items.component';
-
+import { FormsModule } from '@angular/forms';
+import { FoodItemsModule } from '../../components/food-items.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,8 @@ import { FilterItemsComponent } from './AdminComponents/filter-items/filter-item
     UpdateItemComponent,
     DeleteItemComponent,
     ViewItemComponent,
-    FilterItemsComponent
+    FilterItemsComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule
-  ]
+  imports: [CommonModule, AdminRoutingModule, FormsModule, FoodItemsModule],
 })
-export class AdminModule { }
+export class AdminModule {}
