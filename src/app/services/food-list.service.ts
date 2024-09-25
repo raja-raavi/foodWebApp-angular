@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { catchError, Observable, Subject, switchMap, throwError } from 'rxjs';
 import { foodList } from '../models/food-list';
 import { deliveryinformation } from '../models/deliveryInfo';
 import { updateFoodItem } from '../models/updateFoodItem';
@@ -26,6 +26,13 @@ export class FoodListService {
     return this.http.get('http://localhost:3000/foodList/' + id);
   }
 
+  createFoodItem(itemBody: any): Observable<any> {
+    return this.http.post<any>(
+      'http://localhost:3000/uploadedImages',
+      itemBody
+    );
+  }
+
   updateFoodItem(id: number, itemBody: any): Observable<updateFoodItem> {
     return this.http.put<updateFoodItem>(
       'http://localhost:3000/foodList/' + id,
@@ -44,6 +51,24 @@ export class FoodListService {
     return this.http.post<deliveryinformation>(
       'http://localhost:3000/DeliveryInfo',
       info
+    );
+  }
+
+  updateImagePath(id: number, imagePath: string): Observable<any> {
+    return this.http.get(`http://localhost:3000/uploadedImages/${id}`).pipe(
+      switchMap((image) => {
+        // If the image exists, update it with PUT
+        return this.http.put(`http://localhost:3000/uploadedImages/${id}`, {
+          food_image: imagePath,
+        });
+      }),
+      catchError((error) => {
+        if (error.status === 404) {
+          // If the image doesn't exist, create a new entry with POST
+          return this.http.post('http://localhost:3000/uploadedImages', {});
+        }
+        return throwError(error);
+      })
     );
   }
 }

@@ -435,5 +435,16 @@
       "password": "Raja@123",
       "confirmPassword": "Raja@123"
     }
+  ],
+  "uploadedImages": [
+    {
+      "id": "e0f1",
+      "food_name": "Noodels",
+      "food_image": "assets/images/food_22.png",
+      "food_price": 25,
+      "food_description": "It's good",
+      "food_category": "Noodels",
+      "food_quantity": "0"
+    }
   ]
 }

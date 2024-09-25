@@ -1,0 +1,56 @@
+<div class="add">
+    <form class="flex-col" #updatedInfo="ngForm">
+        <div class="add-img-upload flex-col">
+            <p>Upload Image</p>
+            <label for="image">
+                <img [src]="imagePreview || '../../../../../assets/images/upload.png'" alt="Upload Preview">
+            </label>
+            <input type="file" id="image" (change)="onImagePicked($event)" hidden>
+        </div>
+
+        <!-- Bind food_name input field to the model -->
+        <div class="add-product-name flex-col">
+            <p>Item Name</p>
+            <input type="text" name="food_name" [(ngModel)]="selectedItem.food_name" placeholder="Type Here" required>
+        </div>
+
+        <!-- Bind food_description input field to the model -->
+        <div class="add-item-description flex-col">
+            <p>Item Description</p>
+            <textarea name="food_description" [(ngModel)]="selectedItem.food_description" rows="6"
+                placeholder="Write Content Here" required></textarea>
+        </div>
+
+        <div class="add-category-price">
+            <div class="add-category flex-col">
+                <p>Item category</p>
+                <!-- Bind food_category select to the model -->
+                <select name="food_category" [(ngModel)]="selectedItem.food_category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Salad">Salad</option>
+                    <option value="Rolls">Rolls</option>
+                    <option value="Deserts">Deserts</option>
+                    <option value="Sandwich">Sandwich</option>
+                    <option value="Cake">Cake</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Pure Veg">Pure Veg</option>
+                    <option value="Noodels">Noodels</option>
+                </select>
+            </div>
+
+            <!-- Bind food_price input field to the model -->
+            <div class="add-price flex-col">
+                <p>Item Price</p>
+                <input type="number" name="food_price" [(ngModel)]="selectedItem.food_price" placeholder="$20" required>
+            </div>
+        </div>
+
+        <div class="add-back-buttons">
+            <button type="submit" class="add-button" (click)="updateItemButton(updatedInfo)" (click)="showPopup()">Add
+                Item</button>
+            <button type="button" class="add-button" (click)="navigateBack()">Go Back</button>
+        </div>
+    </form>
+</div>
+
+<app-popup *ngIf="popupService.popup$ | async as popup"></app-popup>

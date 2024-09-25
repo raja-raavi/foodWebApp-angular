@@ -62,20 +62,28 @@ export class UpdateItemComponent implements OnInit {
         food_quantity: this.selectedItem.food_quantity,
       };
 
-      //posting updated Data to Data Base
-      this.foodListService
-        .updateFoodItem(this.selectedItemId, updatedItemDetails)
-        .subscribe((data) => {
-          this.newData = data;
+      // Check if form is dirty
+      if (updatedInfo.dirty) {
+        // posting updated Data to Data Base
+        this.foodListService
+          .updateFoodItem(this.selectedItemId, updatedItemDetails)
+          .subscribe((data) => {
+            this.newData = data;
+          });
+
+        // Update getAllItems array i.e without refreshing page it will reflect changes
+        this.foodListService.getFoodListData().subscribe((response) => {
+          this.getAllItems = response;
         });
 
-      // Update getAllItems array i.e without refreshing page it will reflect changes
-      this.foodListService.getFoodListData().subscribe((response) => {
-        this.getAllItems = response;
-      });
-
-      updatedInfo.reset();
-      this.popupService.popupMessage = 'Item is updated successfully 🙂';
+        updatedInfo.reset();
+        this.popupService.popupMessage = 'Item is updated successfully 🤩';
+        // Navigate to update item page
+        this.router.navigate(['/adminDashboard/admin-update-item/0']);
+      } else {
+        this.popupService.popupMessage =
+          'This data is already exists in the Data Base 🙃';
+      }
     } else {
       this.popupService.popupMessage = 'Oppss.. Looks like fields are empty 😒';
     }
