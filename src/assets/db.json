@@ -337,6 +337,15 @@
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Noodles",
       "food_quantity": 0
+    },
+    {
+      "id": "0e80",
+      "food_name": "French Noodels",
+      "food_image": "assets/images/food_23.png",
+      "food_price": 20,
+      "food_description": "It's have very good tatse",
+      "food_category": "Noodels",
+      "food_quantity": "0"
     }
   ],
   "topDishes": [
@@ -434,17 +443,6 @@
       "email": "user@gmail.com",
       "password": "Raja@123",
       "confirmPassword": "Raja@123"
-    }
-  ],
-  "uploadedImages": [
-    {
-      "id": "e0f1",
-      "food_name": "Noodels",
-      "food_image": "assets/images/food_22.png",
-      "food_price": 25,
-      "food_description": "It's good",
-      "food_category": "Noodels",
-      "food_quantity": "0"
     }
   ]
 }

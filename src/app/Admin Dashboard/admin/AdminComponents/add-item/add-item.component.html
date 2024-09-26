@@ -1,5 +1,5 @@
 <div class="add">
-    <form class="flex-col" #updatedInfo="ngForm">
+    <form class="flex-col" #AddItemInfo="ngForm">
         <div class="add-img-upload flex-col">
             <p>Upload Image</p>
             <label for="image">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="add-back-buttons">
-            <button type="submit" class="add-button" (click)="updateItemButton(updatedInfo)" (click)="showPopup()">Add
+            <button type="submit" class="add-button" (click)="addItemButton(AddItemInfo)" (click)="showPopup()">Add
                 Item</button>
             <button type="button" class="add-button" (click)="navigateBack()">Go Back</button>
         </div>

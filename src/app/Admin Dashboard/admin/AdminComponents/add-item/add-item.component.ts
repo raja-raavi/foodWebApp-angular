@@ -18,7 +18,6 @@ export class AddItemComponent implements OnInit {
   constructor(
     private foodListService: FoodListService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     public popupService: PopupService
   ) {}
 
@@ -34,19 +33,19 @@ export class AddItemComponent implements OnInit {
     };
   }
 
-  updateItemButton(updatedInfo: any): void {
+  addItemButton(AddItemInfo: any): void {
     if (
-      updatedInfo.value.food_name &&
-      updatedInfo.value.food_description &&
-      updatedInfo.value.food_price &&
-      updatedInfo.value.food_category
+      AddItemInfo.value.food_name &&
+      AddItemInfo.value.food_description &&
+      AddItemInfo.value.food_price &&
+      AddItemInfo.value.food_category
     ) {
       const addItemDetais = {
-        food_name: updatedInfo.value.food_name,
+        food_name: AddItemInfo.value.food_name,
         food_image: this.selectedItem.food_image,
-        food_price: updatedInfo.value.food_price,
-        food_description: updatedInfo.value.food_description,
-        food_category: updatedInfo.value.food_category,
+        food_price: AddItemInfo.value.food_price,
+        food_description: AddItemInfo.value.food_description,
+        food_category: AddItemInfo.value.food_category,
         food_quantity: this.selectedItem.food_quantity,
       };
 
@@ -54,7 +53,14 @@ export class AddItemComponent implements OnInit {
         this.details = data;
       });
 
-      updatedInfo.reset();
+      //clearing the form after add button clicked
+      AddItemInfo.reset();
+
+      // Clear the selected image and image preview
+      this.selectedImage = null;
+      this.imagePreview = null;
+      this.selectedItem.food_image = '';
+
       this.popupService.popupMessage = 'Item is added successfully 🤩';
     } else {
       this.popupService.popupMessage = 'Opps... Looks like fields are empty 🙃';

@@ -27,10 +27,7 @@ export class FoodListService {
   }
 
   createFoodItem(itemBody: any): Observable<any> {
-    return this.http.post<any>(
-      'http://localhost:3000/uploadedImages',
-      itemBody
-    );
+    return this.http.post<any>('http://localhost:3000/foodList', itemBody);
   }
 
   updateFoodItem(id: number, itemBody: any): Observable<updateFoodItem> {
@@ -55,17 +52,17 @@ export class FoodListService {
   }
 
   updateImagePath(id: number, imagePath: string): Observable<any> {
-    return this.http.get(`http://localhost:3000/uploadedImages/${id}`).pipe(
+    return this.http.get(`http://localhost:3000/foodList/${id}`).pipe(
       switchMap((image) => {
         // If the image exists, update it with PUT
-        return this.http.put(`http://localhost:3000/uploadedImages/${id}`, {
+        return this.http.put(`http://localhost:3000/foodList/${id}`, {
           food_image: imagePath,
         });
       }),
       catchError((error) => {
         if (error.status === 404) {
           // If the image doesn't exist, create a new entry with POST
-          return this.http.post('http://localhost:3000/uploadedImages', {});
+          return this.http.post('http://localhost:3000/foodList', {});
         }
         return throwError(error);
       })
