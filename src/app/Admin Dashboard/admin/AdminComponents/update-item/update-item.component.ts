@@ -31,6 +31,7 @@ export class UpdateItemComponent implements OnInit {
   }
 
   updateButtonClicked(id: any) {
+    window.scrollTo(0, 0); // to prevent auto bottom scrolling
     this.foodListService.getFoodItem(id).subscribe((result) => {
       this.selectedItem = result;
       console.log(this.selectedItem);

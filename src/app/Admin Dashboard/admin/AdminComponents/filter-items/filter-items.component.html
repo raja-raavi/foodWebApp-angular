@@ -1,1 +1,64 @@
-<p>filter-items works!</p>
+<h2 class="main-heading">Please select the category to filter the items</h2>
+<div class="explore-menu-list">
+    <div *ngFor="let ele of menuListResult; let i = index" class="explore-menu-list-item">
+        <img [src]="ele.menu_image" [ngClass]="{'customClass': selectedIndex === i}"
+            (click)="setCategory(ele.menu_name); selectedIndex = i">
+        <p>{{ele.menu_name}}</p>
+    </div>
+</div>
+<hr />
+
+<p *ngIf="!selectedItem; then viewFilteredItems; else viewOneItem"></p>
+<!-- filtered products -->
+<ng-template #viewFilteredItems>
+    <div class="food-display" *ngIf="filteredItems">
+        <h3>The filtered category is : {{userCategory}} </h3>
+        <div class="food-display-list">
+            <div class="food-item" *ngFor="let ele of filteredItems">
+                <div class="food-item-image-container">
+                    <img [src]="ele.food_image" alt="image" class="food-item-image">
+                </div>
+                <div class="food-item-info">
+                    <div class="food-item-name-rating">
+                        <p>{{ele.food_name}}</p>
+                        <img src="../../../assets/images/rating_starts.png" alt="">
+                    </div>
+                    <p class="food-item-description">{{ele.food_description}}</p>
+                    <div class="food-item-priceandBtn">
+                        <p class="food-item-price">${{ele.food_price}}</p>
+                        <button class="food-item-viewBtn" (click)="viewButtonClicked(ele.id)">view
+                            Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+</ng-template>
+
+<!-- view Item -->
+<ng-template #viewOneItem>
+    <section class="shop-item">
+        <div class="container">
+            <div class="row">
+                <div class="col image-section">
+                    <img [src]="selectedItem.food_image" alt="Image" />
+                </div>
+                <div class="col content-section">
+                    <h1 class="product-title">{{selectedItem.food_name}}
+                    </h1>
+                    <div class="price-section">
+                        <span class="original-price">$45.00</span>
+                        <span class="discounted-price">${{selectedItem.food_price}}</span>
+                    </div>
+                    <p class="product-description">{{selectedItem.food_description}}</p>
+                    <div class="actions">
+                        <button class="navigate-back" type="button" (click)="navigateBack()">
+                            Go Back
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-template>

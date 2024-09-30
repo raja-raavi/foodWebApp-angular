@@ -25,11 +25,11 @@
 
     <ng-template #adminNavbar>
         <ul class="navbar-menu" *ngIf="regUsersService.isAdminLoggedIn()">
-            <li [routerLinkActive]="'active'" routerLink="/adminDashboard/admin-view-item"><a>View Item</a></li>
+            <li [routerLinkActive]="'active'" routerLink="/adminDashboard/admin-view-item/0"><a>View Item</a></li>
             <li [routerLinkActive]="'active'" routerLink="/adminDashboard/admin-add-item"><a>Add Item</a></li>
             <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: false }"
                 routerLink="/adminDashboard/admin-update-item/0"><a>Update Item</a></li>
-            <li [routerLinkActive]="'active'" routerLink="/adminDashboard/admin-delete-item"><a>Delete Item</a></li>
+            <li [routerLinkActive]="'active'" routerLink="/adminDashboard/admin-delete-item/0"><a>Delete Item</a></li>
             <li [routerLinkActive]="'active'" routerLink="/adminDashboard/admin-filter-items"><a>Filter Items</a></li>
         </ul>
     </ng-template>

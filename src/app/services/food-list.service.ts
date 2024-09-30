@@ -22,19 +22,27 @@ export class FoodListService {
     return this.foodListSubject.asObservable();
   }
 
+  //to get specific food Item
   getFoodItem(id: number): Observable<any> {
     return this.http.get('http://localhost:3000/foodList/' + id);
   }
 
+  //to create a new Item
   createFoodItem(itemBody: any): Observable<any> {
     return this.http.post<any>('http://localhost:3000/foodList', itemBody);
   }
 
+  //to update an alredy existing Item
   updateFoodItem(id: number, itemBody: any): Observable<updateFoodItem> {
     return this.http.put<updateFoodItem>(
       'http://localhost:3000/foodList/' + id,
       itemBody
     );
+  }
+
+  //to delete an Item
+  deleteFoodItem(id: number): Observable<foodList> {
+    return this.http.delete<foodList>('http://localhost:3000/foodList/' + id);
   }
 
   getCartItems() {

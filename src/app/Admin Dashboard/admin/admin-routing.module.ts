@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'admin-home-page', component: HomeComponent },
   { path: 'admin-add-item', component: AddItemComponent },
   { path: 'admin-update-item/:id', component: UpdateItemComponent },
-  { path: 'admin-delete-item', component: DeleteItemComponent },
-  { path: 'admin-view-item', component: ViewItemComponent },
+  { path: 'admin-delete-item/:id', component: DeleteItemComponent },
+  { path: 'admin-view-item/:id', component: ViewItemComponent },
   { path: 'admin-filter-items', component: FilterItemsComponent },
 ];
 

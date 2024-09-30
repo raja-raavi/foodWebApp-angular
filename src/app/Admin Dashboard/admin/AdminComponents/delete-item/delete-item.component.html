@@ -1,1 +1,20 @@
-<p>delete-item works!</p>
+<div class="food-display-list">
+    <div class="food-item" *ngFor="let ele of getAllItems">
+        <div class="food-item-image-container">
+            <img [src]="ele.food_image" alt="image" class="food-item-image">
+        </div>
+        <div class="food-item-info">
+            <div class="food-item-name-rating">
+                <p>{{ele.food_name}}</p>
+                <img src="../../../assets/images/rating_starts.png" alt="">
+            </div>
+            <p class="food-item-description">{{ele.food_description}}</p>
+            <div class="food-item-priceandBtn">
+                <p class="food-item-price">${{ele.food_price}}</p>
+                <button class="food-item-updateBtn" [routerLink]=" ['/adminDashboard/admin-update-item/',ele.id]"
+                    (click)="deleteButtonClicked(ele.id)">Delete
+                    Item</button>
+            </div>
+        </div>
+    </div>
+</div>
