@@ -414,7 +414,32 @@
       "id": "b434"
     }
   ],
-  "DeliveryInfo": [],
+  "DeliveryInfo": [
+    {
+      "id": "ed68",
+      "firstName": "raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    },
+    {
+      "id": "ce32",
+      "firstName": "raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    }
+  ],
   "registeredUsers": [
     {
       "id": "01d5",

@@ -1,10 +1,11 @@
-import { Component, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FoodListService } from '../../services/food-list.service';
 import { PopupService } from '../../services/popup.service';
 import { PopupComponent } from '../popup/popup.component';
 import { Router } from '@angular/router';
 import { TotalService } from 'src/app/services/total.service';
 import { RegisteredUsersDataService } from 'src/app/services/registered-users-data.service';
+import { FoodMenuComponent } from '../food-menu/food-menu.component';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit{
   deliveryFee: number = 0;  
   Total:number = 0;
   isCoupounApplied: boolean = false;
+  @ViewChild(FoodMenuComponent) foodMenu: FoodMenuComponent
   
   @Output() cartData = new EventEmitter(); //emitting data
 

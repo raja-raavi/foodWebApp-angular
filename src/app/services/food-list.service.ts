@@ -15,6 +15,7 @@ export class FoodListService {
 
   private foodListSubject = new Subject<foodList[]>();
 
+  
   getFoodListData(): Observable<foodList[]> {
     this.http.get('http://localhost:3000/foodList').subscribe((data: any) => {
       this.foodListSubject.next(data);

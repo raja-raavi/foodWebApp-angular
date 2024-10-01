@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, OnInit} from '@angular/core';
+import { AfterContentChecked, Component, OnInit, ViewChild} from '@angular/core';
 import { foodList } from '../../models/food-list';
 import { ActivatedRoute } from '@angular/router';
 import { FoodListService } from '../../services/food-list.service';
