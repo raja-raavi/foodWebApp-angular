@@ -69,7 +69,7 @@ export class SigninComponent {
       (data) => {
         // Check for admin login first
         if (
-          signinForm.value.userName === 'Admin'.toLocaleLowerCase() &&
+          signinForm.value.userName.toLowerCase() === 'Admin'.toLowerCase() &&
           signinForm.value.email === 'admin@gmail.com' &&
           signinForm.value.password === 'Admin@123'
         ) {
@@ -96,7 +96,7 @@ export class SigninComponent {
         //Store user details in localStorage
         if (result) {
           alert('You are SuccessFully LoggedIn 🤩');
-          localStorage.setItem('userName', signinForm.value.userName);
+          localStorage.setItem('userName', signinForm.value.userName.charAt(0).toUpperCase() + signinForm.value.userName.slice(1).toLowerCase());
           localStorage.setItem('email', signinForm.value.email);
           localStorage.setItem('password', signinForm.value.password);
           localStorage.setItem('role', 'User');
