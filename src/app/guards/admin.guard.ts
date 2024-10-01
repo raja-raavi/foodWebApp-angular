@@ -7,17 +7,12 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RegisteredUsersDataService } from '../services/registered-users-data.service';
-import { PopupService } from '../services/popup.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationGuard implements CanActivate {
-  constructor(
-    private regUsersService: RegisteredUsersDataService,
-    private popupService: PopupService
-  ) {}
-
+export class AdminGuard implements CanActivate {
+  constructor(private regUsersService: RegisteredUsersDataService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -26,7 +21,7 @@ export class AuthenticationGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.regUsersService.isUserLoggedIn()) {
+    if (this.regUsersService.isAdminLoggedIn()) {
       return true;
     } else {
       alert('To access this component you have to login!!');
