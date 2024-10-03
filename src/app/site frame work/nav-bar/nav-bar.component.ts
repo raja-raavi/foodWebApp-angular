@@ -1,8 +1,9 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { RegisteredUsersDataService } from 'src/app/services/registered-users-data.service';
 import { Router } from '@angular/router';
 import { CartComponent } from 'src/app/components/cart/cart.component';
 import { FoodListService } from 'src/app/services/food-list.service';
+import { BehaviorSubject, interval } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,19 +13,21 @@ import { FoodListService } from 'src/app/services/food-list.service';
 export class NavBarComponent {
   dropdownOpen = false;
   userName: any;
-  hasItemsInCart: any
+  cartEmpty: boolean;
   @ViewChild(CartComponent) cart: CartComponent
 
   constructor(
     public regUsersService: RegisteredUsersDataService,
     private router: Router,
-    private service: FoodListService
+    private service: FoodListService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngAfterContentChecked(){
-    this.checkCartItems()
+    //console.log(this.service.hasCartEmpty());
+    this.cartEmpty = this.service.hasCartEmpty();
+    
   }
-
   signOut() {
     var result = window.confirm('are you sure want to Logout!!!');
     if (result == true) {
@@ -41,11 +44,4 @@ export class NavBarComponent {
       localStorage.getItem('userName').slice(1).toLowerCase();
   }
 
-
-  // Check if there are items in the cart
-  checkCartItems() {
-    if(this.hasItemsInCart = this.service.getCartItems() !== null && this.service.getCartItems().length > 0){
-      this.hasItemsInCart = true;
-    } 
-  }
 }

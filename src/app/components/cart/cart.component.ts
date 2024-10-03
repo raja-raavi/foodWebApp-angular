@@ -22,14 +22,10 @@ export class CartComponent implements OnInit{
   isCoupounApplied: boolean = false;
   @ViewChild(FoodMenuComponent) foodMenu: FoodMenuComponent
   
-  @Output() cartData = new EventEmitter(); //emitting data
-
   constructor(private foodListService: FoodListService, public popupService: PopupService, private router: Router,
    private totalService: TotalService, private regUsersService: RegisteredUsersDataService){
 
    }
-
-  
 
   ngOnInit(){
     if (!this.regUsersService.isUserLoggedIn() || this.foodListService.getCartItems().length === 0) {
@@ -39,14 +35,6 @@ export class CartComponent implements OnInit{
       this.calculateTotals();
     }
     
-    
-    //emitting the data to placeOrder compoenent
-    this.cartData.emit({
-      cartItems: this.cartItems,
-      subTotal: this.subTotal,
-      deliveryFee: this.deliveryFee,
-      Total: this.Total
-    });
   }
   
   //removing Items from cart when cross button is clicked
@@ -73,14 +61,16 @@ export class CartComponent implements OnInit{
     this.subTotal = 0;
     for(let ele of this.cartItems || []){ // Handle case when cartItems is null
       this.subTotal += ele.food_quantity * ele.food_price;
+      this.totalService.finalSubTotal = this.subTotal
     }
     // Calculate delivery fee
     this.deliveryFee = this.getDeliveryFee(this.subTotal);
+    this.totalService.finalDeliveryFee = this.deliveryFee;
     // Calculate total
     this.Total = this.subTotal + this.deliveryFee;
 
     //passing total amount to payment page compoenent
-    this.totalService.total = this.Total
+    this.totalService.discountedTotal = this.Total
   }
   
   getDeliveryFee(subTotal: number){
@@ -107,8 +97,9 @@ export class CartComponent implements OnInit{
     if(this.isCoupounApplied == true){
       this.popupService.popupMessage = "You have already applied the coupoun"
       input.value = ''
-    }else if(input.value == 'save25' && this.Total > 70){
+    }else if(input.value == 'save25' && this.Total > 100){
       this.Total = this.Total - this.calculatePercentage(this.Total, 25)
+      this.totalService.discountedTotal = this.Total  
       input.value = ''
       this.popupService.popupMessage = "'SAVE25' coupon is applied successfully 🎁"
       this.isCoupounApplied = true;
@@ -117,8 +108,8 @@ export class CartComponent implements OnInit{
     }else if(input.value != 'save25' || input.value == ''){
       this.popupService.popupMessage = "Coupon is not valid....Use 'SAVE25' for 25% off"
       input.value = ''
-    }else if(this.Total < 70){
-      this.popupService.popupMessage = "Opps...Total amount should be > 75 to avail this offer"
+    }else if(this.Total < 100){
+      this.popupService.popupMessage = "Opps...Total amount should be > 100 to avail this offer"
       input.value = '' 
     }
   }

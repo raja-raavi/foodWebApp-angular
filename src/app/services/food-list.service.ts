@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { ChangeDetectorRef, Injectable } from '@angular/core';
 import { catchError, Observable, Subject, switchMap, throwError } from 'rxjs';
 import { foodList } from '../models/food-list';
 import { deliveryinformation } from '../models/deliveryInfo';
@@ -10,6 +10,7 @@ import { updateFoodItem } from '../models/updateFoodItem';
 })
 export class FoodListService {
   selectedItems: any = {};
+  isCartEmpty: boolean;
 
   constructor(private http: HttpClient) {}
 
@@ -50,6 +51,16 @@ export class FoodListService {
     return this.selectedItems;
   }
 
+  //checking for cart empty or not to display the dot symbol on the cart when items are there
+  hasCartEmpty(){
+    if(this.selectedItems !==null && Object.keys(this.selectedItems).length > 0){
+      this.isCartEmpty = false
+    }else{
+      this.isCartEmpty = true;
+    }
+    return this.isCartEmpty;
+  }
+
   //to store delivery Info
   deliveryInformation(
     info: deliveryinformation
@@ -60,6 +71,7 @@ export class FoodListService {
     );
   }
 
+  //for uploading image while creating Item
   updateImagePath(id: number, imagePath: string): Observable<any> {
     return this.http.get(`http://localhost:3000/foodList/${id}`).pipe(
       switchMap((image) => {

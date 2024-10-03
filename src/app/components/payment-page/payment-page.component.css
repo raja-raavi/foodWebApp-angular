@@ -38,3 +38,77 @@
     margin-top: 20px;
     margin-left: 380px;
 }
+
+.hidden {
+    display: none; /* or you can use opacity: 0; visibility: hidden; */
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .preloader {
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-bottom: 20px; /* Space between the spinner and text */
+    align-items: center;
+    margin-top: 200px;
+  }
+  
+  .double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #01ad69;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .double-bounce2 {
+    animation-delay: -1.0s;
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% {
+      transform: scale(0.0);
+    }
+    50% {
+      transform: scale(1.0);
+    }
+  }
+  
+  p {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .button{
+    border: none;
+    color: white;
+    background-color: tomato;
+    width: max(10vw, 100px);
+    padding: 12px;
+    gap: 80px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 100px;
+    margin-left: 40px;
+} 

@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class TotalService {
   
-  total: number;
-  
+  discountedTotal: number;
+  finalDeliveryFee: number;
+  finalSubTotal: number;
+  placeOrderPageTotal : number;
 }

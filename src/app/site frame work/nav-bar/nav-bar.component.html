@@ -41,7 +41,7 @@
             <img src="../../../assets/images/basket_icon.png" alt="" routerLink="/food-items/cart"
                 *ngIf="!regUsersService.isAdminLoggedIn()">
             <!-- <div class="dot"></div> -->
-            <div class="dot" *ngIf="hasItemsInCart"></div>
+            <div class="dot" *ngIf="!cartEmpty"></div>
         </div>
         <!-- User icon and dropdown trigger -->
         <div class="nav-bar-profile-container" (click)="toggleDropdown()">

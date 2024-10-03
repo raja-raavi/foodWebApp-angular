@@ -100,7 +100,8 @@
 </form>
 
 <!-- to access data from cart to placeOrder also by using HIDDEN we are hiding the cart.html -->
-<app-cart hidden (cartData)="receiveCartData($event)"></app-cart>
+<!-- <app-cart hidden (cartData)="receiveCartData($event)"></app-cart> -->
+<app-cart hidden #cart></app-cart>
 
 <!-- to Display poppup message -->
 <app-popup *ngIf="popupService.popup$ | async as popup"></app-popup>

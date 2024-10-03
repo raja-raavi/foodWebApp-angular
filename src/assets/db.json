@@ -337,15 +337,6 @@
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Noodles",
       "food_quantity": 0
-    },
-    {
-      "id": "1d9d",
-      "food_name": "Biryani",
-      "food_image": "assets/images/aboutPageImage.png",
-      "food_price": 44,
-      "food_description": "Food provides essential nutrients for overall health and well-being",
-      "food_category": "Desert's",
-      "food_quantity": "0"
     }
   ],
   "topDishes": [
@@ -414,32 +405,7 @@
       "id": "b434"
     }
   ],
-  "DeliveryInfo": [
-    {
-      "id": "ed68",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
-    },
-    {
-      "id": "ce32",
-      "firstName": "raja",
-      "lastName": "raavi",
-      "email": "rajaraavi999@gmail.com",
-      "street": "Antervedi kara,3-46,near post office.",
-      "city": "Malikipuram",
-      "state": "Andhra Pradesh",
-      "zipcode": "533252",
-      "country": "India",
-      "phone": "09963258690"
-    }
-  ],
+  "DeliveryInfo": [],
   "registeredUsers": [
     {
       "id": "01d5",

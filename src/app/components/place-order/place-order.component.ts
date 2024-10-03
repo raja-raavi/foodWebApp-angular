@@ -5,6 +5,7 @@ import { PopupComponent } from '../popup/popup.component';
 import { ChangeDetectorRef } from '@angular/core';
 import { TotalService } from '../../services/total.service';
 import { Router } from '@angular/router';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-place-order',
@@ -18,24 +19,20 @@ export class PlaceOrderComponent  {
   subTotal: number = 0;
   deliveryFee: number = 0;
   Total: number = 0;
-  
-  constructor(private foodListService: FoodListService, public popupService: PopupService, private cdRef: ChangeDetectorRef,      private router: Router, private totalService: TotalService){
+
+ 
+  constructor(private foodListService: FoodListService, public popupService: PopupService, private cdRef: ChangeDetectorRef, private router: Router, private totalService: TotalService){
     
   }
 
-    //accesing all the data from CartComponent
-  receiveCartData($event) {
-    this.cartData = $event;
-    this.subTotal = this.cartData.subTotal;
-    this.deliveryFee = this.cartData.deliveryFee;
-    this.Total = this.cartData.Total;
-    this.cdRef.detectChanges();
-  }
-  
   ngOnInit(){
-    this.Total = this.totalService.total;
-    this.subTotal = this.totalService.total - this.deliveryFee;
+    this.Total = this.totalService.discountedTotal;
+    //passing total to payment page
+    this.totalService.placeOrderPageTotal = this.Total
+    this.subTotal = this.totalService.finalSubTotal;
+    this.deliveryFee = this.totalService.finalDeliveryFee;    
   }
+
   //capturing the DeliveryInfo Details provided by user
   save(addressForm){
     this.isaddressFormSubmitted = true
@@ -53,7 +50,7 @@ export class PlaceOrderComponent  {
       } 
       //posting the deliveryInfo to DB
       this.foodListService.deliveryInformation(deliveryInfo).subscribe(data=>{
-        console.log(data); 
+        //console.log(data); 
         addressForm.reset();
       }, error=>{
         this.popupService.popupMessage = "Opps...Something Went Wrong"

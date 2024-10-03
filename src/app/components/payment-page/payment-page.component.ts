@@ -1,7 +1,8 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { PaymentService } from '../../services/payment.service';
 import { TotalService } from '../../services/total.service';
+import { PlaceOrderComponent } from '../place-order/place-order.component';
 
 
 
@@ -11,19 +12,25 @@ import { TotalService } from '../../services/total.service';
   styleUrls: ['./payment-page.component.css']
 })
 export class PaymentPageComponent {
- Total: number = 0;
-
+  Total: number;
+  showPreloader: boolean = true;
+ 
    @ViewChild('paymentRef', {static:true}) paymentRef!: ElementRef;
 
-  constructor(private router: Router, private totalService: TotalService, private paymentService: PaymentService){
+  constructor(private router: Router, private totalService: TotalService, private paymentService: PaymentService, private cdr: ChangeDetectorRef){
     
   }
 
 ngOnInit() {
 
-    //getting total from cart component
-    this.Total = this.totalService.total;
-    
+  setTimeout(() => {
+    this.showPreloader = false;
+    this.cdr.detectChanges();
+  }, 3000);
+
+  //getting total from place order page
+  this.Total = this.totalService.placeOrderPageTotal;
+
     (window as any).paypal.Buttons({
       style: {
         layout : 'horizontal',
@@ -38,7 +45,7 @@ ngOnInit() {
               value:this.Total.toString(),
               currency_code: 'USD'
             }
-          }]
+          }],
         })
       },
       onApprove: (data: any, actions: any)=>{
@@ -53,9 +60,10 @@ ngOnInit() {
         console.log(error); 
       }
     }).render(this.paymentRef.nativeElement)
+     
   }
 
   cancel(){
     this.router.navigate(['/food-items/food-menu'])
-  }
+  }  
 }
