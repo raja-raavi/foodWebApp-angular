@@ -337,6 +337,24 @@
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Noodles",
       "food_quantity": 0
+    },
+    {
+      "id": "ede3",
+      "food_name": "Noodles",
+      "food_image": "assets/images/Noodles.png",
+      "food_price": 2,
+      "food_description": "jahajhjad",
+      "food_category": "Noodles",
+      "food_quantity": "0"
+    },
+    {
+      "id": "a682",
+      "food_name": "Chicken Roll",
+      "food_image": "assets/images/chicken roll.png",
+      "food_price": 10,
+      "food_description": "sss",
+      "food_category": "Roll's",
+      "food_quantity": "0"
     }
   ],
   "topDishes": [
@@ -411,27 +429,6 @@
       "id": "01d5",
       "userName": "raja",
       "email": "test@gmail.com",
-      "password": "Raja@123",
-      "confirmPassword": "Raja@123"
-    },
-    {
-      "id": "2ba0",
-      "userName": "kharim",
-      "email": "kharim@gmail.com",
-      "password": "Kharim@123",
-      "confirmPassword": "Kharim@123"
-    },
-    {
-      "id": "8021",
-      "userName": "vani",
-      "email": "vani@gmail.com",
-      "password": "Vani@123",
-      "confirmPassword": "Vani@123"
-    },
-    {
-      "id": "1038",
-      "userName": "raja",
-      "email": "user@gmail.com",
       "password": "Raja@123",
       "confirmPassword": "Raja@123"
     }
