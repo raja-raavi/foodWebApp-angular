@@ -339,21 +339,21 @@
       "food_quantity": 0
     },
     {
-      "id": "ede3",
-      "food_name": "Noodles",
-      "food_image": "assets/images/Noodles.png",
-      "food_price": 2,
-      "food_description": "jahajhjad",
-      "food_category": "Noodles",
-      "food_quantity": "0"
-    },
-    {
       "id": "a682",
       "food_name": "Chicken Roll",
       "food_image": "assets/images/chicken roll.png",
       "food_price": 10,
-      "food_description": "sss",
+      "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Roll's",
+      "food_quantity": "0"
+    },
+    {
+      "id": "2004",
+      "food_name": "sandwich",
+      "food_image": "assets/images/aboutPageImage.png",
+      "food_price": 1,
+      "food_description": "vv,amv';m'",
+      "food_category": "Sandwich's",
       "food_quantity": "0"
     }
   ],
