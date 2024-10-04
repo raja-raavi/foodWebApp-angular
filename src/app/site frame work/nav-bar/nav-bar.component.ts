@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef, ElementRef } from '@angular/core';
 import { RegisteredUsersDataService } from 'src/app/services/registered-users-data.service';
 import { Router } from '@angular/router';
 import { CartComponent } from 'src/app/components/cart/cart.component';
@@ -43,5 +43,4 @@ export class NavBarComponent {
       localStorage.getItem('userName').charAt(0).toUpperCase() +
       localStorage.getItem('userName').slice(1).toLowerCase();
   }
-
 }

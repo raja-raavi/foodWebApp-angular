@@ -346,15 +346,6 @@
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Roll's",
       "food_quantity": "0"
-    },
-    {
-      "id": "5a17",
-      "food_name": "Noodelss",
-      "food_image": "assets/images/Noodles.png",
-      "food_price": 2,
-      "food_description": "SCLdsp",
-      "food_category": "Noodles",
-      "food_quantity": "0"
     }
   ],
   "topDishes": [

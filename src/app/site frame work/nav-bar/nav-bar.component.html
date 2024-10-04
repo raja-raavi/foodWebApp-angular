@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" #navbar>
 
     <p *ngIf="regUsersService.isAdminLoggedIn(); then adminLogo; else userLogo"></p>
     <!-- main heading -->

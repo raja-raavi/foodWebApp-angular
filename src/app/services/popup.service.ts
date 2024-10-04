@@ -17,7 +17,7 @@ export class PopupService {
     this.popupSubject.next([component, this.popupMessage]);
     setTimeout(() => {
       this.closePopup();
-    }, 4000); 
+    }, 5000); 
   }
 
   closePopup() {
