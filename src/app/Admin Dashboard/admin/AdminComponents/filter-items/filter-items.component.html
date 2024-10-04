@@ -12,7 +12,7 @@
 <!-- filtered products -->
 <ng-template #viewFilteredItems>
     <div class="food-display" *ngIf="filteredItems">
-        <h3>The filtered category is : {{userCategory}} </h3>
+        <h3 style="color: #000;">The filtered category is : <span style="color: tomato;">{{userCategory}}</span> </h3>
         <div class="food-display-list">
             <div class="food-item" *ngFor="let ele of filteredItems">
                 <div class="food-item-image-container">
