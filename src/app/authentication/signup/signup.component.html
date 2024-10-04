@@ -14,7 +14,7 @@
                 </p>
             </div>
             <!-- email -->
-            <input type="email" placeholder="Your email" formControlName="email" />
+            <input type="email" placeholder="Enter a unique email (not already registered)" formControlName="email" />
             <div class="errors-messages">
                 <p *ngIf="this.signupForm.get('email').touched && this.signupForm.get('email').errors?.['required']">
                     email is required
