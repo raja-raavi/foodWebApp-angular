@@ -43,7 +43,7 @@ export class FoodMenuComponent implements OnInit{
   addButtonClicked(i) {
     //checking whether user is loggedin or not
     if (!this.regUsersService.isUserLoggedIn()) {
-      this.popupService.popupMessage = "Opps......You have to login to access this component😒";
+      this.popupService.popupMessage = "Oops... You’ll need to login to add items to your cart! 😒";
       this.showPopup();
     } else {
       this.showCounter[i] = true;
