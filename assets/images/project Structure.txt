@@ -1,0 +1,7 @@
+1. Added basic styles in main.css file
+
+2. created a component as navBar an ddesigned it
+
+3. add the outfit google fonts
+
+4. crated a header compeonet also use keyframes to get smooth effect (fadeIn)
