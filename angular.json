@@ -24,9 +24,6 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "production": {
-              "baseHref": "foodWebApp-angular"
-            },
             "styles": [
               "src/styles.css"
             ],
