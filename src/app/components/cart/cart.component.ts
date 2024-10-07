@@ -95,7 +95,7 @@ export class CartComponent implements OnInit{
 
   userInput(input){
     if(this.isCoupounApplied == true){
-      this.popupService.popupMessage = "You have already applied the coupoun"
+      this.popupService.popupMessage = "You have already applied the coupoun 🙃"
       input.value = ''
     }else if(input.value == 'save25' && this.Total > 100){
       this.Total = this.Total - this.calculatePercentage(this.Total, 25)
@@ -104,12 +104,12 @@ export class CartComponent implements OnInit{
       this.popupService.popupMessage = "'SAVE25' coupon is applied successfully 🎁"
       this.isCoupounApplied = true;
     }else if(this.Total == 0 && input.value == ''){
-      this.popupService.popupMessage = "Opps...your cart is zero now..Grab few items"
+      this.popupService.popupMessage = "Oopps...your cart is zero now..Grab few items"
     }else if(input.value != 'save25' || input.value == ''){
       this.popupService.popupMessage = "Coupon is not valid....Use 'SAVE25' for 25% off"
       input.value = ''
     }else if(this.Total < 100){
-      this.popupService.popupMessage = "Opps...Total amount should be > 100 to avail this offer"
+      this.popupService.popupMessage = "Oopps...Total amount should be > 100 to avail this offer 😒"
       input.value = '' 
     }
   }

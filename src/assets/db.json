@@ -54,7 +54,7 @@
       "id": "1",
       "food_name": "Greek salad",
       "food_image": "assets/images/food_1.png",
-      "food_price": 12,
+      "food_price": 19,
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Salad's",
       "food_quantity": 0
@@ -79,9 +79,9 @@
     },
     {
       "id": "4",
-      "food_name": "Chicken Salad",
+      "food_name": "Veg Salad",
       "food_image": "assets/images/food_4.png",
-      "food_price": 24,
+      "food_price": 20,
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Salad's",
       "food_quantity": 0
@@ -171,7 +171,7 @@
       "id": "14",
       "food_name": "Vegan Sandwich",
       "food_image": "assets/images/food_14.png",
-      "food_price": 18,
+      "food_price": 17,
       "food_description": "Food provides essential nutrients for overall health and well-being",
       "food_category": "Sandwich's",
       "food_quantity": 0
@@ -313,7 +313,7 @@
     },
     {
       "id": "30",
-      "food_name": "Veg Noodles",
+      "food_name": "Veg Noodle",
       "food_image": "assets/images/food_30.png",
       "food_price": 12,
       "food_description": "Food provides essential nutrients for overall health and well-being",
@@ -339,12 +339,12 @@
       "food_quantity": 0
     },
     {
-      "id": "a682",
-      "food_name": "Chicken Roll",
-      "food_image": "assets/images/chicken roll.png",
-      "food_price": 10,
+      "id": "8b7e",
+      "food_name": "Chicken Noodels",
+      "food_image": "assets/images/Noodles.png",
+      "food_price": 12,
       "food_description": "Food provides essential nutrients for overall health and well-being",
-      "food_category": "Roll's",
+      "food_category": "Noodles",
       "food_quantity": "0"
     }
   ],
@@ -414,12 +414,80 @@
       "id": "b434"
     }
   ],
-  "DeliveryInfo": [],
+  "DeliveryInfo": [
+    {
+      "id": "e0ce",
+      "firstName": "raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    },
+    {
+      "id": "327f",
+      "firstName": "raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    },
+    {
+      "id": "bb49",
+      "firstName": "raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    },
+    {
+      "id": "65a8",
+      "firstName": "raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    },
+    {
+      "id": "4183",
+      "firstName": "Raja",
+      "lastName": "raavi",
+      "email": "rajaraavi999@gmail.com",
+      "street": "Antervedi kara,3-46,near post office.",
+      "city": "Malikipuram",
+      "state": "Andhra Pradesh",
+      "zipcode": "533252",
+      "country": "India",
+      "phone": "09963258690"
+    }
+  ],
   "registeredUsers": [
     {
       "id": "01d5",
       "userName": "raja",
       "email": "test@gmail.com",
+      "password": "Raja@123",
+      "confirmPassword": "Raja@123"
+    },
+    {
+      "id": "9923",
+      "userName": "raja",
+      "email": "user1@gmail.com",
       "password": "Raja@123",
       "confirmPassword": "Raja@123"
     }
