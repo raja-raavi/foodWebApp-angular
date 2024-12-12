@@ -1,27 +1,25 @@
-# FoodApplication
+Hello There👋,
+I am pleased to announce the completion of my latest project, a Food Web Application, developed using Angular 14, Java Script ES6, HTML 5, CSS, and JSON Server, PayPal.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+🎯Key Features at the User Level :
 
-## Development server
+🎯 User Authentication : Users can securely sign in & sign out also Implemented If a registered email is used during sign-up, the system will block the registration and show an "email already exists" error.
+🎯 Protected Routes : Access to components is restricted to authenticated users only.
+🎯 Real-time Filter : Authenticated users can dynamically filter items by category.
+🎯 Coupon Details : Authenticated users can apply the coupon code "SAVE25" to receive a 25% discount on orders exceeding $100 of cart amount.
+🎯 Payment Gateway : PayPal is integrated as the payment gateway to enhance the user experience. Users can utilize dummy card details to simulate payments during the transaction process.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+🎯Key Features at the Admin Level :
 
-## Code scaffolding
+🎯 Admin Authentication : An Admin can sign in and sign out.
+🎯 Protected Routes : Only authenticated administrators can access and navigate to specific components.
+🎯 Real-time Filter : An admin can dynamically filter items by category.
+🎯 CRUD Operations : An admin can perform Create, Read, Update, Delete (CRUD) functionalities on Items.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+🎯 Database : Json - Server
 
-## Build
+NOTE : 
+🎯 All modules are implemented using lazy loading to enhance application performance and provide an improved user experience.
+🎯 RXJS concepts are utilized in services to enhance code reusability and improve efficiency
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular JavaScript Developer Frontend Masters
